@@ -1,4 +1,4 @@
-function Holidays() {
+function UserPage() {
 
     return (
       <>
@@ -7,4 +7,4 @@ function Holidays() {
     )
   }
   
-  export default Holidays;
+  export default UserPage;

@@ -1,4 +1,4 @@
-function Manager() {
+function ManagerPage() {
 
     return (
       <>
@@ -7,4 +7,4 @@ function Manager() {
     )
   }
   
-  export default Manager;
+  export default ManagerPage;
