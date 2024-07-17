@@ -3,6 +3,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import UserPage from "../components/UserPage";
 import ManagerPage from "../components/ManagerPage";
 import HolidaysPage from "../components/HolidaysPage";
+import Navigation from "../components/Navigation";
 
 function HRContainer() {
 
@@ -12,7 +13,7 @@ function HRContainer() {
     [
       {
         path: "/",
-        element: <Navigation/>
+        element: <Navigation/>,
         children: [
           {
             path: "/user-dashboard",
