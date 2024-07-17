@@ -1,4 +1,7 @@
 package com.example.hr_portal_capstone.repositories;
 
-public class HolidayRepository {
+import com.example.hr_portal_capstone.models.Holiday;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface HolidayRepository extends JpaRepository<Holiday, Long> {
 }

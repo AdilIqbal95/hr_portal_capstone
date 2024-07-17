@@ -1,4 +1,7 @@
 package com.example.hr_portal_capstone.repositories;
 
-public class TeamRepository {
+import com.example.hr_portal_capstone.models.Team;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface TeamRepository extends JpaRepository<Team, Long> {
 }
