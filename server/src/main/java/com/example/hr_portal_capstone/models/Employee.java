@@ -37,7 +37,7 @@ public class Employee {
 
 
     @OneToMany(mappedBy="employee")
-    @JsonIgnoreProperties({"employee"})
+    @JsonIgnoreProperties({"employees"})
     private List<Holiday>holidays;
 
     @Column(name="totalHoliday")
