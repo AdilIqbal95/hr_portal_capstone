@@ -1,5 +1,6 @@
 import EmployeeForm from "./EmployeeForm";
 import HolidayApprovalList from "./HolidayApprovalList";
+import SearchHolidayApproval from "./SearchHolidayApproval";
 
 function ManagerPage() {
 
