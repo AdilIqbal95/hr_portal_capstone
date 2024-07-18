@@ -16,11 +16,6 @@ public class Holiday {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    @JsonIgnoreProperties({"holidays"})
-    private Employee employee;
-
     @Column(name = "start_date")
     private LocalDate startDate;
 
@@ -35,12 +30,17 @@ public class Holiday {
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    public Holiday(Employee employee, LocalDate startDate, LocalDate endDate, Reason reason, Status status) {
+    @ManyToOne
+    @JoinColumn(name = "employee_id")
+    @JsonIgnoreProperties({"holidays", "team"})
+    private Employee employee;
+
+    public Holiday(Employee employee, LocalDate startDate, LocalDate endDate, Reason reason) {
         this.employee = employee;
         this.startDate = startDate;
         this.endDate = endDate;
         this.reason = reason;
-        this.status = status;
+        this.status = Status.PENDING;
     }
 
     public Holiday() {
@@ -93,4 +93,6 @@ public class Holiday {
     public void setStatus(Status status) {
         this.status = status;
     }
+
+
 }
