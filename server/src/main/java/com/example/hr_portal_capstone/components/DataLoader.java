@@ -57,8 +57,17 @@ public class DataLoader implements ApplicationRunner {
         Employee dena = new Employee("Dena", "Shiranpour", "Dena@hotmail.com", southLondon, "London", Grade.MANAGER,  25 );
         employeeService.createEmployee(dena);
 
-        Employee adil = new Employee("Adil", "Iqbal", "adil@hotmail.com", southLondon, "London", Grade.MANAGER,  25 );
+        Employee adil = new Employee("Adil", "Iqbal", "adil@hotmail.com", southLondon, "London", Grade.JUNIOR,  25 );
         employeeService.createEmployee(adil);
+
+        Employee ghish = new Employee("Ghish", "Mohanadas", "ghish@hotmail.com", southLondon, "London", Grade.JUNIOR,  25 );
+        employeeService.createEmployee(ghish);
+
+        Employee sabah = new Employee("Sabah", "Yusuf", "sabah@hotmail.com", northLondon, "London", Grade.JUNIOR,  25 );
+        employeeService.createEmployee(sabah);
+
+        Employee peter = new Employee("Peter", "Parker", "Peter@hotmail.com", northLondon, "London", Grade.JUNIOR,  25 );
+        employeeService.createEmployee(peter);
 
         LocalDate mariaStartDate = LocalDate.of(2024, 8, 10);
         LocalDate mariaEndDate = LocalDate.of(2024, 8, 17);
@@ -68,6 +77,13 @@ public class DataLoader implements ApplicationRunner {
         LocalDate adilEndDate = LocalDate.of(2024, 8, 11);
         LocalDate adilStartDate2 = LocalDate.of(2024, 9, 10);
         LocalDate adilEndDate2 = LocalDate.of(2024, 9, 21);
+        LocalDate ghishStartDate = LocalDate.of(2024, 10, 2);
+        LocalDate ghishEndDate = LocalDate.of(2024, 10, 10);
+        LocalDate sabahStartDate = LocalDate.of(2024, 11, 22);
+        LocalDate sabahEndDate = LocalDate.of(2024, 11, 30);
+        LocalDate peterStartDate = LocalDate.of(2024, 12, 25);
+        LocalDate peterEndDate = LocalDate.of(2024, 12, 30);
+
 
         Holiday mariaHoliday = new Holiday(maria, mariaStartDate, mariaEndDate, Reason.ANNUAL_LEAVE);
         holidayRepository.save(mariaHoliday);
@@ -79,5 +95,13 @@ public class DataLoader implements ApplicationRunner {
         holidayRepository.save(adilHoliday);
         Holiday adilHoliday2 = new Holiday(adil, adilStartDate2, adilEndDate2, Reason.ANNUAL_LEAVE);
         holidayRepository.save(adilHoliday2);
+        Holiday ghishHoliday = new Holiday(ghish, ghishStartDate, ghishEndDate, Reason.ANNUAL_LEAVE);
+        holidayRepository.save(ghishHoliday);
+        Holiday sabahHoliday = new Holiday(sabah, sabahStartDate, sabahEndDate, Reason.ANNUAL_LEAVE);
+        holidayRepository.save(sabahHoliday);
+        Holiday paterHoliday = new Holiday(peter, peterStartDate, peterEndDate, Reason.ANNUAL_LEAVE);
+        holidayRepository.save(paterHoliday);
+
+
     }
 }
