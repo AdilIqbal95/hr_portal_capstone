@@ -1,6 +1,7 @@
 package com.example.hr_portal_capstone.controllers;
 
 import com.example.hr_portal_capstone.models.Employee;
+import com.example.hr_portal_capstone.models.enums.Grade;
 import com.example.hr_portal_capstone.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,7 +19,7 @@ public class EmployeeController {
 
     @GetMapping
     public ResponseEntity<List<Employee>> getAllEmployee(){
-        List<Employee> employees = employeeService.getAllEmployees();
+        List<Employee> employees = employeeService.getAllEmployeesById();
         return new ResponseEntity<>(employees, HttpStatus.OK);
     }
 
@@ -32,8 +33,8 @@ public class EmployeeController {
     }
 
     @PostMapping
-    public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee){
-        Employee savedEmployee = employeeService.createEmployee(employee);
+    public ResponseEntity<Employee> createEmployeeById(@RequestBody Employee employee){
+        Employee savedEmployee = employeeService.createEmployeeById(employee);
         return new ResponseEntity<>(savedEmployee, HttpStatus.CREATED);
     }
 
@@ -41,6 +42,17 @@ public class EmployeeController {
     public ResponseEntity<Void> deleteEmployeeById(@PathVariable long id){
         employeeService.deleteEmployeeById(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @PutMapping ("/{id}")
+    public ResponseEntity<Employee> updateEmployeeById(@RequestBody Employee employee, @PathVariable long id){
+        return new ResponseEntity<>(employeeService.updateEmployeeFeatures(employee, id), HttpStatus.OK);
+    }
+
+    @GetMapping
+    public  ResponseEntity<List<Employee>> getEmployeeByGrade(@RequestParam Grade grade){
+        List<Employee> managerEmployees = employeeService.getEmployeeByGrade(grade);
+        return new ResponseEntity<>(managerEmployees, HttpStatus.OK);
     }
 
 

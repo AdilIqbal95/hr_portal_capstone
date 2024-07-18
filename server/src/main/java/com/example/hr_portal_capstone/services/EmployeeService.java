@@ -13,7 +13,7 @@ public class EmployeeService {
     @Autowired
     EmployeeRepository employeeRepository;
 
-    public List<Employee> getAllEmployees() {
+    public List<Employee> getAllEmployeesById() {
         return employeeRepository.findAll();
     }
 
@@ -21,7 +21,7 @@ public class EmployeeService {
         return employeeRepository.findById(id);
     }
 
-    public Employee createEmployee(Employee employee) {
+    public Employee createEmployeeById(Employee employee) {
         return employeeRepository.save(employee);
     }
 
@@ -46,6 +46,12 @@ public class EmployeeService {
 
         return existingEmployee;
     }
+
+
+    public List<Employee>getEmployeeByGrade(Grade grade){
+        return employeeRepository.findByGrade;
+    }
+
 }
 
 
