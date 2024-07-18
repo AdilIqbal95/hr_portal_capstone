@@ -24,11 +24,11 @@ function HolidayRequestForm() {
             defaultValue="Holiday Type"
           >
               <option value="">Select</option>
-              <option value="complaint">Annual Leave</option>
-              <option value="feedback">Parental Leave</option>
-              <option value="support">Sick Leave</option>
-              <option value="support">Bereavement Leave</option>
-              <option value="other">Other</option>
+              <option value="Annual_leave">Annual Leave</option>
+              <option value="Parental_leave">Parental Leave</option>
+              <option value="Sick_leave">Sick Leave</option>
+              <option value="Bereavement_leave">Bereavement Leave</option>
+              <option value="Other">Other</option>
           </select>
           </form>
      </section>
