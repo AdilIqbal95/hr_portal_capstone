@@ -1,5 +1,7 @@
 package com.example.hr_portal_capstone.models;
 
+import com.example.hr_portal_capstone.models.enums.Reason;
+import com.example.hr_portal_capstone.models.enums.Status;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
