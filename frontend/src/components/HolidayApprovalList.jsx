@@ -1,3 +1,6 @@
+import SearchHolidayApproval from "./SearchHolidayApproval";
+
+
 
 const HolidayApprovalList = () => {
 
@@ -51,7 +54,13 @@ const HolidayApprovalList = () => {
     return(
     <>
     <h1>Holiday Approval List</h1>
-    {mappedHolidayApprovalList}
+   <section>
+    
+    <SearchHolidayApproval/>
+   {mappedHolidayApprovalList}
+
+   </section> 
+
     
     </>
 )
