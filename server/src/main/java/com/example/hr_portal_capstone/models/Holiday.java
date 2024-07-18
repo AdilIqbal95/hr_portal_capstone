@@ -32,7 +32,7 @@ public class Holiday {
 
     @ManyToOne
     @JoinColumn(name = "employee_id")
-    @JsonIgnoreProperties({"holidays", "team", "employee"})
+    @JsonIgnoreProperties({"holidays", "team"})
     private Employee employee;
 
     public Holiday(Employee employee, LocalDate startDate, LocalDate endDate, Reason reason) {
@@ -93,4 +93,6 @@ public class Holiday {
     public void setStatus(Status status) {
         this.status = status;
     }
+
+
 }

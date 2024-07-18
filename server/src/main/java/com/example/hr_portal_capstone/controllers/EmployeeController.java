@@ -44,7 +44,7 @@ public class EmployeeController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    @PutMapping ("/{id}")
+    @PatchMapping ("/{id}")
     public ResponseEntity<Employee> updateEmployeeById(@RequestBody Employee employee, @PathVariable long id){
         return new ResponseEntity<>(employeeService.updateEmployeeFeatures(employee, id), HttpStatus.OK);
     }

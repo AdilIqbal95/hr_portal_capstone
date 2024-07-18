@@ -34,7 +34,7 @@ public class Employee {
     private Grade grade;
 
     @OneToMany(mappedBy="employee")
-    @JsonIgnoreProperties({"employee","holidays", "team"})
+    @JsonIgnoreProperties({"employee"})
     private List<Holiday>holidays;
 
     @ManyToOne
