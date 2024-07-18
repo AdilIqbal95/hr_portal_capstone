@@ -26,9 +26,6 @@ public class Employee {
     @Column (name = "email")
     private String email;
 
-    @Column(name ="team")
-    private Team team;
-
     @Column(name="location")
     private String location;
 
@@ -36,10 +33,14 @@ public class Employee {
     @Enumerated(EnumType.STRING)
     private Grade grade;
 
-
     @OneToMany(mappedBy="employee")
     @JsonIgnoreProperties({"employees"})
     private List<Holiday>holidays;
+
+    @ManyToOne
+    @JoinColumn(name = "team_id")
+    @JsonIgnoreProperties({"employees"})
+    private Team team;
 
     @Column(name="totalHoliday")
     private int totalHoliday;
