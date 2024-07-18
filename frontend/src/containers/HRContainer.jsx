@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import UserPage from "../components/UserPage";
 import ManagerPage from "../components/ManagerPage";
@@ -9,6 +9,18 @@ import LoginPage from "../components/LoginPage";
 function HRContainer() {
 
   const [currentUser, setCurrentUser] = useState([]);
+  const [allEmployees, setAllEmployees] = useState()
+
+  const fetchAllEmployees = async () => {
+    const response = await fetch("http://localhost:8080/employees");
+    const data = await response.json();
+    setAllBookings(data);
+
+  }
+
+  useEffect(() => {
+    fetchAllEmployees()
+  },[])
 
   const router = createBrowserRouter(
     [
