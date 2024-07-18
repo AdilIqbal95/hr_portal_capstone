@@ -34,7 +34,7 @@ public class Employee {
     private Grade grade;
 
     @OneToMany(mappedBy="employee")
-    @JsonIgnoreProperties({"employees"})
+    @JsonIgnoreProperties({"employee","holidays", "team"})
     private List<Holiday>holidays;
 
     @ManyToOne
@@ -50,8 +50,7 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee( String firstName, String lastName, String email,
-                     Team team, String location, Grade grade, int totalHoliday) {
+    public Employee( String firstName, String lastName, String email, Team team, String location, Grade grade, int totalHoliday) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;

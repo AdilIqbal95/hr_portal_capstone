@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/employee")
+@RequestMapping("/employees")
 public class EmployeeController {
     @Autowired
     EmployeeService employeeService;
@@ -33,8 +33,8 @@ public class EmployeeController {
     }
 
     @PostMapping
-    public ResponseEntity<Employee> createEmployeeById(@RequestBody Employee employee){
-        Employee savedEmployee = employeeService.createEmployeeById(employee);
+    public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee){
+        Employee savedEmployee = employeeService.createEmployee(employee);
         return new ResponseEntity<>(savedEmployee, HttpStatus.CREATED);
     }
 
@@ -49,9 +49,9 @@ public class EmployeeController {
         return new ResponseEntity<>(employeeService.updateEmployeeFeatures(employee, id), HttpStatus.OK);
     }
 
-    @GetMapping
-    public  ResponseEntity<List<Employee>> getEmployeeByGrade(@RequestParam Grade grade){
-        List<Employee> managerEmployees = employeeService.getEmployeeByGrade(grade);
+    @GetMapping ("/filter-by-grade")
+    public  ResponseEntity<List<Employee>> getAllManagers(@RequestParam Grade grade){
+        List<Employee> managerEmployees = employeeService.getAllManagers(grade);
         return new ResponseEntity<>(managerEmployees, HttpStatus.OK);
     }
 

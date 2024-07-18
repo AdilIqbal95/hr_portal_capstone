@@ -4,10 +4,12 @@ import com.example.hr_portal_capstone.models.Employee;
 import com.example.hr_portal_capstone.models.enums.Grade;
 import com.example.hr_portal_capstone.repositories.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class EmployeeService {
 
     @Autowired
@@ -21,7 +23,7 @@ public class EmployeeService {
         return employeeRepository.findById(id);
     }
 
-    public Employee createEmployeeById(Employee employee) {
+    public Employee createEmployee(Employee employee) {
         return employeeRepository.save(employee);
     }
 
@@ -48,8 +50,8 @@ public class EmployeeService {
     }
 
 
-    public List<Employee>getEmployeeByGrade(Grade grade){
-        return employeeRepository.findByGrade;
+    public List<Employee>getAllManagers(Grade grade){
+        return employeeRepository.findByGrade(grade);
     }
 
 }

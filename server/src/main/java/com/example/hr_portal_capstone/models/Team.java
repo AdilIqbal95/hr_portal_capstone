@@ -18,7 +18,7 @@ public class Team {
     private String teamName;
 
     @OneToMany(mappedBy="team")
-    @JsonIgnoreProperties({"teams"})
+    @JsonIgnoreProperties({"team", "holidays", "employees"})
     private List<Employee> employees;
 
     @Column(name="location")
