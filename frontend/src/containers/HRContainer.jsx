@@ -8,7 +8,7 @@ import LoginPage from "../components/LoginPage";
 
 function HRContainer() {
 
-  // const [currentUser, setCurrentUser] = useState([]);
+  const [currentUser, setCurrentUser] = useState("");
   const [allEmployees, setAllEmployees] = useState()
   const [allHolidays, setAllHolidays] = useState()
   const [allTeams, setAllTeams] = useState()
@@ -48,11 +48,11 @@ function HRContainer() {
         children: [
           {
             path:"/",
-            element:<LoginPage/>
+            element:<LoginPage allEmployees={allEmployees} setCurrentUser={setCurrentUser}/>
           },
           {
             path: "/user-dashboard",
-            element: <UserPage allEmployees={allEmployees}/>
+            element: <UserPage allEmployees={allEmployees} currentUser={currentUser}/>
           },
           {
             path: "/manager-dashboard",

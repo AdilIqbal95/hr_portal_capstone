@@ -1,10 +1,13 @@
 import { useState } from "react";
+import {useNavigate} from "react-router-dom";
 
 
 
-function LoginPage() {
+function LoginPage({allEmployees, setCurrentUser}) {
 
     const [email, setEmail] = useState("");
+    const navigate = useNavigate();
+
 
 
 
@@ -19,13 +22,23 @@ function LoginPage() {
 
       const handleSubmit = (e) => {
         e.preventDefault();
-        // compare input email to all employee emails 
-        // if does not exsit error (do not navigate to different page)
-        // otherwise navigate to that user dashboard
-        // set current user to the inputted email (matching)
+        allEmployees.map((employee)=> {
+            if (employee.email == email){
+              setCurrentUser(email)
+              navigate('/user-dashboard')
+            }
+            
+        })
+
+        // alert("Incorrect login")
+        
+
+        
+
+
+
         // if junior (dashboard and holiday) if manager (display all pages)
         // 
-        
       }
 
 
@@ -36,7 +49,7 @@ function LoginPage() {
         <h1>Login to Rainforest HR! </h1>
 
         <article>
-        <form action="">
+        <form onSubmit={handleSubmit}>
         <label> Email </label>
         <input type="text"  
             id="email"
