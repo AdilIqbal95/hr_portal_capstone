@@ -60,4 +60,18 @@ public class HolidayService {
         return existingHoliday;
     }
 
+    public Holiday createHoliday(HolidayDTO holidayDTO) {
+        if (holidayDTO.getEndDate().isAfter(holidayDTO.getStartDate())) {
+//           todo: fix it and add a 'if' exists check
+            Employee employee = employeeRepository.findById(holidayDTO.getEmployeeId()).get();
+            Holiday newHoliday = new Holiday(employee, holidayDTO.getStartDate(), holidayDTO.getEndDate(), holidayDTO.getReason());
+            return holidayRepository.save(newHoliday);
+
+        } else {
+            throw new RuntimeException("ERROR: The end date should be after start date");
+        }
+    }
+
+//    create remianing holiday variable within method, another variable that calculates total holidays taken which you get from total holidays take from employee
+
 }
