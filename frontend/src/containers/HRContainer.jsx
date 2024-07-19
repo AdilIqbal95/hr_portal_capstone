@@ -4,6 +4,7 @@ import UserPage from "../components/UserPage";
 import ManagerPage from "../components/ManagerPage";
 import HolidaysPage from "../components/HolidaysPage";
 import Navigation from "../components/Navigation";
+import LoginPage from "../components/LoginPage";
 
 function HRContainer() {
 
@@ -15,6 +16,10 @@ function HRContainer() {
         path: "/",
         element: <Navigation/>,
         children: [
+          {
+            path:"/",
+            element:<LoginPage/>
+          },
           {
             path: "/user-dashboard",
             element: <UserPage/>
