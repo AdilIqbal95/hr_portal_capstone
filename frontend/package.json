@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "date-fns": "^3.6.0",
+    "fns": "^1.0.0",
+    "moment": "^2.30.1",
     "react": "^18.3.1",
     "react-big-calendar": "^1.13.1",
     "react-dom": "^18.3.1",
