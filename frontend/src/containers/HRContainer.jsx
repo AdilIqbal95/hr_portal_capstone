@@ -8,17 +8,7 @@ import LoginPage from "../components/LoginPage";
 
 function HRContainer() {
 
-  const [currentUser, setCurrentUser] = useState({
-    id:null,
-    firstName: "",
-    lastName:"",
-    email:"",
-    location:"",
-    grade:"",
-    holidays:[],
-    team:{},
-    totalHoliday:null,
-  });
+  const [currentUser, setCurrentUser] = useState("");
   const [allEmployees, setAllEmployees] = useState()
   const [allHolidays, setAllHolidays] = useState()
   const [allTeams, setAllTeams] = useState()

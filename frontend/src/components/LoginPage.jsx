@@ -24,21 +24,16 @@ function LoginPage({allEmployees, setCurrentUser}) {
         e.preventDefault();
         allEmployees.map((employee)=> {
             if (employee.email == email){
-              setCurrentUser({
-                id:employee.id,
-                firstName: employee.firstName,
-                lastName:employee.lastName,
-                email:employee.email,
-                location:employee.location,
-                grade:employee.grade,
-                holidays:employee.holidays,
-                team:employee.team,
-                totalHoliday:employee.totalHoliday,
+              setCurrentUser({email
               })
               navigate('/user-dashboard')
             }
             
         })
+        // This need to be done in back end
+        // Post request with email as body
+        // Extract req body from controller, write service in employee findUserByEmail (derived query)
+        // update db email column in db to be unique (research for spring)
 
         // alert("Incorrect login")
         
