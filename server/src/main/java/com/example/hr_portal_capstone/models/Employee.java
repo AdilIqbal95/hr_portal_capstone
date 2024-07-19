@@ -146,7 +146,7 @@ public class Employee {
 //        outside of loop, return (total holiday - holidaysTaken)
 
 
-//        this is a java probelm, how many weekends are there in a specfic amount of days
+//        this is a java problem, how many weekends are there in a specific amount of days
 
     }
 
