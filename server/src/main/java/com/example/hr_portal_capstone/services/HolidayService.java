@@ -1,6 +1,7 @@
 package com.example.hr_portal_capstone.services;
 import com.example.hr_portal_capstone.models.Employee;
 import com.example.hr_portal_capstone.models.Holiday;
+import com.example.hr_portal_capstone.models.HolidayDTO;
 import com.example.hr_portal_capstone.models.enums.Reason;
 import com.example.hr_portal_capstone.models.enums.Status;
 import com.example.hr_portal_capstone.repositories.HolidayRepository;
@@ -29,8 +30,13 @@ public class HolidayService {
         return holidayRepository.findByEmployeeId(employeeId);
     }
 
-    public Holiday createHoliday(Holiday holiday) {
-        return holidayRepository.save(holiday);
+    public Holiday createHoliday(HolidayDTO holidayDTO) {
+//        if (holidayDTO.getEndDate().isAfter(holidayDTO.getStartDate())){
+//        }
+       // TODO:
+       Holiday newHoliday = new Holiday(holidayDTO.getStartDate(),holidayDTO.getEndDate(),holidayDTO.getReason());
+        return holidayRepository.save(holidayDTO);
+//        else throw new RuntimeException("Start date must be before end date");
     }
 
     public void deleteHolidayById(long id) {

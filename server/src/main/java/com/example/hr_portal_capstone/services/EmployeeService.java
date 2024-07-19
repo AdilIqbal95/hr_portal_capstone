@@ -6,6 +6,8 @@ import com.example.hr_portal_capstone.repositories.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,6 +16,9 @@ public class EmployeeService {
 
     @Autowired
     EmployeeRepository employeeRepository;
+
+    @Autowired
+    Employee employee;
 
     public List<Employee> getAllEmployeesById() {
         return employeeRepository.findAll();
@@ -54,7 +59,23 @@ public class EmployeeService {
         return employeeRepository.findByGrade(grade);
     }
 
+//    private void verifyEmployee(long employeeId) {
+//        if (!employeeRepository.existsById(employeeId)) {
+//            throw new RuntimeException("Employee not found with id: " + employeeId);
+//        }
+//    }
+//
+//    public long daysUsedOfHoliday(LocalDate startDate, LocalDate endDate) {
+//        long daysInBetween = ChronoUnit.DAYS.between(startDate, endDate);
+//        if (daysInBetween > employee.getTotalHoliday()) {
+//           throw new RuntimeException("you only have " + employee.getTotalHoliday() + "days of holiday left");
+//        }
+//
+//    }
+
 }
+
+
 
 
 
