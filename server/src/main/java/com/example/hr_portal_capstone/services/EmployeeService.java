@@ -17,8 +17,6 @@ public class EmployeeService {
     @Autowired
     EmployeeRepository employeeRepository;
 
-    @Autowired
-    Employee employee;
 
     public List<Employee> getAllEmployeesById() {
         return employeeRepository.findAll();
@@ -65,13 +63,14 @@ public class EmployeeService {
 //        }
 //    }
 //
-//    public long daysUsedOfHoliday(LocalDate startDate, LocalDate endDate) {
-//        long daysInBetween = ChronoUnit.DAYS.between(startDate, endDate);
-//        if (daysInBetween > employee.getTotalHoliday()) {
-//           throw new RuntimeException("you only have " + employee.getTotalHoliday() + "days of holiday left");
-//        }
 //
-//    }
+    public long daysUsedOfHoliday(Employee employee, LocalDate startDate, LocalDate endDate) {
+        long daysInBetween = ChronoUnit.DAYS.between(startDate, endDate);
+        if (daysInBetween > employee.getTotalHoliday()) {
+            throw new RuntimeException("you only have " + employee.getTotalHoliday() + "days of holiday left");
+        }
+        return daysInBetween;
+    }
 
 }
 

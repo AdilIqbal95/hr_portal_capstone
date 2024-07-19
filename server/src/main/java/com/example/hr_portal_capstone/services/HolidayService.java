@@ -4,11 +4,13 @@ import com.example.hr_portal_capstone.models.Holiday;
 import com.example.hr_portal_capstone.models.HolidayDTO;
 import com.example.hr_portal_capstone.models.enums.Reason;
 import com.example.hr_portal_capstone.models.enums.Status;
+import com.example.hr_portal_capstone.repositories.EmployeeRepository;
 import com.example.hr_portal_capstone.repositories.HolidayRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,6 +19,9 @@ public class HolidayService {
 
     @Autowired
     private HolidayRepository holidayRepository;
+
+    @Autowired
+    EmployeeRepository employeeRepository;
 
     public List<Holiday> getAllHolidays() {
         return holidayRepository.findAll();
@@ -30,16 +35,8 @@ public class HolidayService {
         return holidayRepository.findByEmployeeId(employeeId);
     }
 
-    public Holiday createHoliday(HolidayDTO holidayDTO) {
-//        if (holidayDTO.getEndDate().isAfter(holidayDTO.getStartDate())){
-//        }
-       // TODO:
-       Holiday newHoliday = new Holiday(holidayDTO.getStartDate(),holidayDTO.getEndDate(),holidayDTO.getReason());
-        return holidayRepository.save(holidayDTO);
-//        else throw new RuntimeException("Start date must be before end date");
-    }
 
-    public void deleteHolidayById(long id) {
+    public void deleteHolidayById ( long id){
         holidayRepository.deleteById(id);
     }
 
@@ -62,4 +59,5 @@ public class HolidayService {
 
         return existingHoliday;
     }
+
 }

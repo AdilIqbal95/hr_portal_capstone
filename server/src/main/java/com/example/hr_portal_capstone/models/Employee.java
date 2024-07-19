@@ -5,6 +5,8 @@ import com.example.hr_portal_capstone.models.enums.Grade;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -132,9 +134,9 @@ public class Employee {
 
     public void setTotalHoliday(int totalHoliday) {
         this.totalHoliday = totalHoliday;
+
     }
 
 //    NOTE FOR FUTURE: CREATE IS AVAILABLE/ REMAINING HOLIDAY
-
 
 }
