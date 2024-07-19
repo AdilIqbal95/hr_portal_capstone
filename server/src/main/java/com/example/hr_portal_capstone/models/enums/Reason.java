@@ -10,3 +10,6 @@ public enum Reason {
 
 
 }
+
+//structure the enum, can add white space
+// use get and set functions
