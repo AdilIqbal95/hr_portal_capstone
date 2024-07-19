@@ -52,7 +52,7 @@ function HRContainer() {
           },
           {
             path: "/user-dashboard",
-            element: <UserPage/>
+            element: <UserPage allEmployees={allEmployees}/>
           },
           {
             path: "/manager-dashboard",
