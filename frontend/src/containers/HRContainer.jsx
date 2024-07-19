@@ -8,18 +8,36 @@ import LoginPage from "../components/LoginPage";
 
 function HRContainer() {
 
-  const [currentUser, setCurrentUser] = useState([]);
+  // const [currentUser, setCurrentUser] = useState([]);
   const [allEmployees, setAllEmployees] = useState()
+  const [allHolidays, setAllHolidays] = useState()
+  const [allTeams, setAllTeams] = useState()
+
 
   const fetchAllEmployees = async () => {
     const response = await fetch("http://localhost:8080/employees");
     const data = await response.json();
-    setAllBookings(data);
-
+    setAllEmployees(data);
   }
+
+  const fetchAllHolidays = async () => {
+    const response = await fetch("http://localhost:8080/holidays");
+    const data = await response.json();
+    setAllHolidays(data);
+  }
+
+  const fetchAllTeams = async () => {
+    const response = await fetch("http://localhost:8080/teams");
+    const data = await response.json();
+    setAllTeams(data);
+  }
+
+
 
   useEffect(() => {
     fetchAllEmployees()
+    fetchAllHolidays()
+    fetchAllTeams()
   },[])
 
   const router = createBrowserRouter(
