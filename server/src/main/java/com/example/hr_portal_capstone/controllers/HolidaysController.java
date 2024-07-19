@@ -1,11 +1,13 @@
 package com.example.hr_portal_capstone.controllers;
 import com.example.hr_portal_capstone.models.Holiday;
+import com.example.hr_portal_capstone.models.HolidayDTO;
 import com.example.hr_portal_capstone.services.HolidayService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -38,8 +40,8 @@ public class HolidaysController {
     }
 
     @PostMapping
-    public ResponseEntity<Holiday> createHoliday(@RequestBody Holiday holiday) {
-        Holiday savedHoliday = holidayService.createHoliday(holiday);
+    public ResponseEntity<Holiday> createHoliday(@RequestBody HolidayDTO holidayDTO) {
+        Holiday savedHoliday = holidayService.createHoliday(holidayDTO);
         return new ResponseEntity<>(savedHoliday, HttpStatus.CREATED);
     }
 
