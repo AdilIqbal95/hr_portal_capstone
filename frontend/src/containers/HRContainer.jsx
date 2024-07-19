@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import UserPage from "../components/UserPage";
 import ManagerPage from "../components/ManagerPage";
@@ -8,9 +8,39 @@ import LoginPage from "../components/LoginPage";
 
 function HRContainer() {
 
-  const [currentUser, setCurrentUser] = useState([]);
+  const [currentUser, setCurrentUser] = useState("");
+  const [allEmployees, setAllEmployees] = useState()
+  const [allHolidays, setAllHolidays] = useState()
+  const [allTeams, setAllTeams] = useState()
 
-  const router = createBrowserRouter(
+
+  const fetchAllEmployees = async () => {
+    const response = await fetch("http://localhost:8080/employees");
+    const data = await response.json();
+    setAllEmployees(data);
+  }
+
+  const fetchAllHolidays = async () => {
+    const response = await fetch("http://localhost:8080/holidays");
+    const data = await response.json();
+    setAllHolidays(data);
+  }
+
+  const fetchAllTeams = async () => {
+    const response = await fetch("http://localhost:8080/teams");
+    const data = await response.json();
+    setAllTeams(data);
+  }
+
+
+
+  useEffect(() => {
+    fetchAllEmployees()
+    fetchAllHolidays()
+    fetchAllTeams()
+  },[])
+
+  const managerRouter = createBrowserRouter(
     [
       {
         path: "/",
@@ -18,11 +48,11 @@ function HRContainer() {
         children: [
           {
             path:"/",
-            element:<LoginPage/>
+            element:<LoginPage allEmployees={allEmployees} setCurrentUser={setCurrentUser}/>
           },
           {
             path: "/user-dashboard",
-            element: <UserPage/>
+            element: <UserPage allEmployees={allEmployees} currentUser={currentUser}/>
           },
           {
             path: "/manager-dashboard",
@@ -39,10 +69,35 @@ function HRContainer() {
 
 
   )
+  const juniorRouter = createBrowserRouter(
+    [
+      {
+        path: "/",
+        element: <Navigation/>,
+        children: [
+          {
+            path:"/",
+            element:<LoginPage allEmployees={allEmployees} setCurrentUser={setCurrentUser}/>
+          },
+          {
+            path: "/user-dashboard",
+            element: <UserPage allEmployees={allEmployees} currentUser={currentUser}/>
+          },
+          {
+            path: "/holidays",
+            element: <HolidaysPage/>
+          },
 
+        ]
+      }
+    ]
+
+
+  )
     return (
       <>
-       <RouterProvider router={router} />
+       <RouterProvider router={managerRouter} />
+
       </>
     )
   }
