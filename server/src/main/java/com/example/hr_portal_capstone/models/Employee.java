@@ -137,6 +137,30 @@ public class Employee {
 
     }
 
+    public int getRemainingHolidays () {
+//        set variable to zero (how many holidays you have taken)
+//        once we set to zero, loop through every holiday object
+//        calculate how many days between each holiday  start and end date
+//        calculate how many weekends are included (check stackoverflow maybe?)
+//        add weekdays to how many holidays have been taken
+//        outside of loop, return (total holiday - holidaysTaken)
+
+
+//        this is a java probelm, how many weekends are there in a specfic amount of days
+
+    }
+
+
+
+    public long calculateRemainingDays (Employee employee, LocalDate startDate, LocalDate endDate) {
+        long daysInBetween = ChronoUnit.DAYS.between(startDate, endDate) + 1;
+        if (daysInBetween < employee.getTotalHoliday()) {
+            return employee.getTotalHoliday() - daysInBetween;
+        } else {
+            throw new RuntimeException("ERROR: you only have " + employee.getTotalHoliday() + "days of holiday left");
+        }
+    }
+
 //    NOTE FOR FUTURE: CREATE IS AVAILABLE/ REMAINING HOLIDAY
 
 }
