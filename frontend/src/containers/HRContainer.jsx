@@ -8,7 +8,17 @@ import LoginPage from "../components/LoginPage";
 
 function HRContainer() {
 
-  const [currentUser, setCurrentUser] = useState("");
+  const [currentUser, setCurrentUser] = useState({
+    id:null,
+    firstName: "",
+    lastName:"",
+    email:"",
+    location:"",
+    grade:"",
+    holidays:[],
+    team:{},
+    totalHoliday:null,
+  });
   const [allEmployees, setAllEmployees] = useState()
   const [allHolidays, setAllHolidays] = useState()
   const [allTeams, setAllTeams] = useState()
@@ -40,7 +50,7 @@ function HRContainer() {
     fetchAllTeams()
   },[])
 
-  const router = createBrowserRouter(
+  const managerRouter = createBrowserRouter(
     [
       {
         path: "/",
@@ -69,10 +79,35 @@ function HRContainer() {
 
 
   )
+  const juniorRouter = createBrowserRouter(
+    [
+      {
+        path: "/",
+        element: <Navigation/>,
+        children: [
+          {
+            path:"/",
+            element:<LoginPage allEmployees={allEmployees} setCurrentUser={setCurrentUser}/>
+          },
+          {
+            path: "/user-dashboard",
+            element: <UserPage allEmployees={allEmployees} currentUser={currentUser}/>
+          },
+          {
+            path: "/holidays",
+            element: <HolidaysPage/>
+          },
 
+        ]
+      }
+    ]
+
+
+  )
     return (
       <>
-       <RouterProvider router={router} />
+       <RouterProvider router={managerRouter} />
+
       </>
     )
   }

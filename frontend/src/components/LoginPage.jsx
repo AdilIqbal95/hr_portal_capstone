@@ -24,7 +24,17 @@ function LoginPage({allEmployees, setCurrentUser}) {
         e.preventDefault();
         allEmployees.map((employee)=> {
             if (employee.email == email){
-              setCurrentUser(email)
+              setCurrentUser({
+                id:employee.id,
+                firstName: employee.firstName,
+                lastName:employee.lastName,
+                email:employee.email,
+                location:employee.location,
+                grade:employee.grade,
+                holidays:employee.holidays,
+                team:employee.team,
+                totalHoliday:employee.totalHoliday,
+              })
               navigate('/user-dashboard')
             }
             
