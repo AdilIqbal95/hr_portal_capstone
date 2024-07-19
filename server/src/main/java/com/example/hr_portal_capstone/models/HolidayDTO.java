@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 public class HolidayDTO {
 
-    private int employeeId;
+    private long employeeId;
 
     private LocalDate startDate;
 
@@ -15,25 +15,22 @@ public class HolidayDTO {
 
     private Reason reason;
 
-    private Status status;
 
-
-    public HolidayDTO(int employeeId, LocalDate startDate, LocalDate endDate, Reason reason, Status status) {
+    public HolidayDTO(long employeeId, LocalDate startDate, LocalDate endDate, Reason reason) {
         this.employeeId = employeeId;
         this.startDate = startDate;
         this.endDate = endDate;
         this.reason = reason;
-        this.status = status;
     }
 
     public HolidayDTO() {
     }
 
-    public int getEmployeeId() {
+    public long getEmployeeId() {
         return employeeId;
     }
 
-    public void setEmployeeId(int employeeId) {
+    public void setEmployeeId(long employeeId) {
         this.employeeId = employeeId;
     }
 
@@ -61,11 +58,4 @@ public class HolidayDTO {
         this.reason = reason;
     }
 
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
-    }
 }
