@@ -1,15 +1,17 @@
+import React from 'react';
 import HolidaysCalendar from './HolidaysCalendar';
 
 
 
-function HolidaysPage() {
+function HolidaysPage({allHolidays}) {
 
     return (
       <>
        <h1>Holidays Page</h1>
-       <HolidaysCalendar/>
+       <HolidaysCalendar events={allHolidays} />
       </>
     )
   }
   
   export default HolidaysPage;
+
