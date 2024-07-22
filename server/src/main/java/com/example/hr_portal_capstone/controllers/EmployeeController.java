@@ -19,7 +19,7 @@ public class EmployeeController {
 
     @GetMapping
     public ResponseEntity<List<Employee>> getAllEmployee(){
-        List<Employee> employees = employeeService.getAllEmployeesById();
+        List<Employee> employees = employeeService.getAllEmployees();
         return new ResponseEntity<>(employees, HttpStatus.OK);
     }
 
@@ -36,6 +36,15 @@ public class EmployeeController {
     public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee){
         Employee savedEmployee = employeeService.createEmployee(employee);
         return new ResponseEntity<>(savedEmployee, HttpStatus.CREATED);
+    }
+
+    @GetMapping(value = "/login")
+    public ResponseEntity<Optional<Employee>>login (@RequestParam String email){
+        Optional<Employee> employee = employeeService.getEmployeeByEmail(email);
+        if(employee.isPresent()){
+            return new ResponseEntity<>(employee, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
     @DeleteMapping (value = "{id}")
