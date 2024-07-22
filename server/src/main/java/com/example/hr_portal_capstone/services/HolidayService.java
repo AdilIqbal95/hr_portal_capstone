@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Optional;
@@ -43,8 +44,8 @@ public class HolidayService {
     public Holiday updateHoliday(Holiday holiday, long id) {
         Holiday existingHoliday = this.getHolidayById(id).orElseThrow(() -> new RuntimeException("Holiday not found"));
 
-        LocalDate newStartDate = holiday.getStartDate();
-        LocalDate newEndDate = holiday.getEndDate();
+        LocalDateTime newStartDate = holiday.getStartDate();
+        LocalDateTime newEndDate = holiday.getEndDate();
         Reason newReason = holiday.getReason();
         Status newStatus = holiday.getStatus();
         Employee newEmployee = holiday.getEmployee();

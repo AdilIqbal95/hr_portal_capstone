@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Optional;
@@ -64,7 +65,7 @@ public class EmployeeService {
 //    }
 //
 //
-    public long daysUsedOfHoliday(Employee employee, LocalDate startDate, LocalDate endDate) {
+    public long daysUsedOfHoliday(Employee employee, LocalDateTime startDate, LocalDateTime endDate) {
         long daysInBetween = ChronoUnit.DAYS.between(startDate, endDate);
         if (daysInBetween > employee.getTotalHoliday()) {
             throw new RuntimeException("you only have " + employee.getTotalHoliday() + "days of holiday left");

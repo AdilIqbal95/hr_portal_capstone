@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.time.DayOfWeek;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -142,30 +143,18 @@ public class Employee {
 
     public int getRemainingHolidays () {
 
-//        set variable to zero (how many holidays you have taken)
         int daysOfHolidayTaken = 0;
 
-//       calculate how many weekends are included (check stackoverflow maybe?)
-
-
-//        once we set to zero, loop through every holiday object
-//        calculate how many days between each holiday start and end date
-//        add weekdays to how many holidays have been taken
         for (int i = 0; i < this.getHolidays().size(); i++ ){
             daysOfHolidayTaken += (int) this.getHolidays().get(i).workingDays();
         }
 
-
-//        outside of loop, return (total holiday - holidaysTaken)
         return this.totalHoliday - daysOfHolidayTaken ;
-
-
-//        this is a java problem, how many weekends are there in a specific amount of days
 
     }
 
 
-    public long calculateRemainingDays (Employee employee, LocalDate startDate, LocalDate endDate) {
+    public long calculateRemainingDays (Employee employee, LocalDateTime startDate, LocalDateTime endDate) {
         long daysInBetween = ChronoUnit.DAYS.between(startDate, endDate) + 1;
         if (daysInBetween < employee.getTotalHoliday()) {
             return employee.getTotalHoliday() - daysInBetween;

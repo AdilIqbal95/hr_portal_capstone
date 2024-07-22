@@ -18,6 +18,8 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -69,20 +71,20 @@ public class DataLoader implements ApplicationRunner {
         Employee peter = new Employee("Peter", "Parker", "Peter@hotmail.com", northLondon, "London", Grade.JUNIOR,  25 );
         employeeService.createEmployee(peter);
 
-        LocalDate mariaStartDate = LocalDate.of(2024, 8, 10);
-        LocalDate mariaEndDate = LocalDate.of(2024, 8, 17);
-        LocalDate denaStartDate = LocalDate.of(2024, 7, 28);
-        LocalDate denaEndDate = LocalDate.of(2024, 8, 9);
-        LocalDate adilStartDate = LocalDate.of(2024, 8, 1);
-        LocalDate adilEndDate = LocalDate.of(2024, 8, 11);
-        LocalDate adilStartDate2 = LocalDate.of(2024, 9, 10);
-        LocalDate adilEndDate2 = LocalDate.of(2024, 9, 21);
-        LocalDate ghishStartDate = LocalDate.of(2024, 10, 2);
-        LocalDate ghishEndDate = LocalDate.of(2024, 10, 10);
-        LocalDate sabahStartDate = LocalDate.of(2024, 11, 22);
-        LocalDate sabahEndDate = LocalDate.of(2024, 11, 30);
-        LocalDate peterStartDate = LocalDate.of(2024, 12, 25);
-        LocalDate peterEndDate = LocalDate.of(2024, 12, 30);
+        LocalDateTime mariaStartDate = LocalDateTime.of(2024, Month.AUGUST,10, 23,59);
+        LocalDateTime mariaEndDate = LocalDateTime.of(2024, Month.AUGUST, 17,23,59);
+        LocalDateTime denaStartDate = LocalDateTime.of(2024, Month.JULY, 28,23,59);
+        LocalDateTime denaEndDate = LocalDateTime.of(2024, Month.AUGUST, 9,23,59);
+        LocalDateTime adilStartDate = LocalDateTime.of(2024, Month.AUGUST, 1,23,59);
+        LocalDateTime adilEndDate = LocalDateTime.of(2024, Month.AUGUST, 11,23,59);
+        LocalDateTime adilStartDate2 = LocalDateTime.of(2024, Month.SEPTEMBER, 10,23,59);
+        LocalDateTime adilEndDate2 = LocalDateTime.of(2024, Month.SEPTEMBER, 21,23,59);
+        LocalDateTime ghishStartDate = LocalDateTime.of(2024, Month.OCTOBER, 2,23,59);
+        LocalDateTime ghishEndDate = LocalDateTime.of(2024, Month.OCTOBER, 10,23,59);
+        LocalDateTime sabahStartDate = LocalDateTime.of(2024, Month.NOVEMBER, 22,23,59);
+        LocalDateTime sabahEndDate = LocalDateTime.of(2024, Month.NOVEMBER, 30,23,59);
+        LocalDateTime peterStartDate = LocalDateTime.of(2024, Month.NOVEMBER, 25,23,59);
+        LocalDateTime peterEndDate = LocalDateTime.of(2024, Month.NOVEMBER, 30,23,59);
 
 
         Holiday mariaHoliday = new Holiday(maria, mariaStartDate, mariaEndDate, Reason.ANNUAL_LEAVE);
