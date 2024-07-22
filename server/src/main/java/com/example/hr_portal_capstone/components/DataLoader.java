@@ -54,7 +54,7 @@ public class DataLoader implements ApplicationRunner {
         Employee maria = new Employee("Maria", "Sharif", "maria@hotmail.com", northLondon, "London", Grade.MANAGER,  25 );
         employeeService.createEmployee(maria);
 
-        Employee dena = new Employee("Dena", "Shiranpour", "Dena@hotmail.com", southLondon, "London", Grade.MANAGER,  25 );
+        Employee dena = new Employee("Dena", "Shiranipour", "Dena@hotmail.com", southLondon, "London", Grade.MANAGER,  25 );
         employeeService.createEmployee(dena);
 
         Employee adil = new Employee("Adil", "Iqbal", "adil@hotmail.com", southLondon, "London", Grade.JUNIOR,  25 );
