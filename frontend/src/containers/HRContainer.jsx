@@ -60,7 +60,7 @@ function HRContainer() {
           },
           {
             path: "/holidays",
-            element: <HolidaysPage/>
+            element: <HolidaysPage allHolidays={allHolidays}/>
           },
 
         ]
@@ -85,7 +85,7 @@ function HRContainer() {
           },
           {
             path: "/holidays",
-            element: <HolidaysPage/>
+            element: <HolidaysPage allHolidays={allHolidays}/>
           },
 
         ]
