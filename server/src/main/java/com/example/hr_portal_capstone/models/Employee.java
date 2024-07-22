@@ -137,7 +137,7 @@ public class Employee {
 
     }
 
-    public int getRemainingHolidays () {
+//    public int getRemainingHolidays () {
 //        set variable to zero (how many holidays you have taken)
 //        once we set to zero, loop through every holiday object
 //        calculate how many days between each holiday  start and end date
@@ -148,7 +148,7 @@ public class Employee {
 
 //        this is a java problem, how many weekends are there in a specific amount of days
 
-    }
+//    }
 
 
 
