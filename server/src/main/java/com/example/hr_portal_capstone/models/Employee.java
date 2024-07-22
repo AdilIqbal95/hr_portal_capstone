@@ -5,6 +5,8 @@ import com.example.hr_portal_capstone.models.enums.Grade;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
+import java.time.DayOfWeek;
+import java.util.Arrays;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -137,19 +139,30 @@ public class Employee {
 
     }
 
-//    public int getRemainingHolidays () {
+
+    public int getRemainingHolidays () {
+
 //        set variable to zero (how many holidays you have taken)
+        int daysOfHolidayTaken = 0;
+
+//       calculate how many weekends are included (check stackoverflow maybe?)
+
+
 //        once we set to zero, loop through every holiday object
-//        calculate how many days between each holiday  start and end date
-//        calculate how many weekends are included (check stackoverflow maybe?)
+//        calculate how many days between each holiday start and end date
 //        add weekdays to how many holidays have been taken
+        for (int i = 0; i < this.getHolidays().size(); i++ ){
+            daysOfHolidayTaken += (int) this.getHolidays().get(i).workingDays();
+        }
+
+
 //        outside of loop, return (total holiday - holidaysTaken)
+        return this.totalHoliday - daysOfHolidayTaken ;
 
 
 //        this is a java problem, how many weekends are there in a specific amount of days
 
-//    }
-
+    }
 
 
     public long calculateRemainingDays (Employee employee, LocalDate startDate, LocalDate endDate) {
