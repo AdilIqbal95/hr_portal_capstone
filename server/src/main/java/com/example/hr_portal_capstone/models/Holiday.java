@@ -5,7 +5,9 @@ import com.example.hr_portal_capstone.models.enums.Status;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.util.Arrays;
 
 
 @Entity
@@ -35,7 +37,7 @@ public class Holiday {
     @JsonIgnoreProperties({"holidays", "team"})
     private Employee employee;
 
-    public Holiday(Employee employee, LocalDate startDate, LocalDate endDate, Reason reason) {
+    public Holiday(Employee employee, LocalDate startDate, LocalDate endDate, Reason reason){
         this.employee = employee;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -94,5 +96,18 @@ public class Holiday {
         this.status = status;
     }
 
+    long workingDays() {
+        return this.getStartDate().datesUntil(this.getEndDate())
+                .map(LocalDate::getDayOfWeek)
+                .filter(day -> !Arrays.asList(DayOfWeek.SATURDAY, DayOfWeek.SUNDAY).contains(day))
+                .count();
+    }
+
 
 }
+
+
+
+
+
+
