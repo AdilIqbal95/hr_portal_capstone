@@ -2,7 +2,7 @@ import HolidaysList from "./HolidayList";
 import HolidayRequestForm from "./HolidayRequestForm";
 import UserProfile from "./UserProfile";
 
-function UserPage({allEmployees, currentUser}) {
+function UserPage({currentUser}) {
 
     return (
       <>
