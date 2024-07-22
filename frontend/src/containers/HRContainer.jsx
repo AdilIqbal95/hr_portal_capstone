@@ -8,7 +8,7 @@ import LoginPage from "../components/LoginPage";
 
 function HRContainer() {
 
-  const [currentUser, setCurrentUser] = useState("");
+  const [currentUser, setCurrentUser] = useState();
   const [allEmployees, setAllEmployees] = useState()
   const [allHolidays, setAllHolidays] = useState()
   const [allTeams, setAllTeams] = useState()
@@ -32,7 +32,19 @@ function HRContainer() {
     setAllTeams(data);
   }
 
+  // const url = ('localhost:8080/employees/login?' + new URLSearchParams({email:emailInput}).toString())
 
+  const postLoginEmail = async (emailInput) => {
+    const response = await fetch (`http://localhost:8080/employees/login`, {
+      method: "POST", 
+      headers: {"Content-Type": "application/json"},
+      body: emailInput
+    })
+
+    const currentUser = await response.json();
+    console.log(currentUser);
+    setCurrentUser(currentUser); 
+  }
 
   useEffect(() => {
     fetchAllEmployees()
@@ -48,7 +60,7 @@ function HRContainer() {
         children: [
           {
             path:"/",
-            element:<LoginPage allEmployees={allEmployees} setCurrentUser={setCurrentUser}/>
+            element:<LoginPage postLoginEmail = {postLoginEmail}setCurrentUser={setCurrentUser}/>
           },
           {
             path: "/user-dashboard",

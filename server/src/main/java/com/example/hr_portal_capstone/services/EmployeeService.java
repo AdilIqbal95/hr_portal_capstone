@@ -76,7 +76,6 @@ public class EmployeeService {
 
     public Optional<Employee> getEmployeeByEmail(String email){
         return employeeRepository.findByEmailEquals(email);
-
     }
 
 

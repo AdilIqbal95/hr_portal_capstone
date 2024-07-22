@@ -38,8 +38,8 @@ public class EmployeeController {
         return new ResponseEntity<>(savedEmployee, HttpStatus.CREATED);
     }
 
-    @GetMapping(value = "/login")
-    public ResponseEntity<Optional<Employee>>login (@RequestParam String email){
+    @PostMapping(value = "/login")
+    public ResponseEntity<Optional<Employee>>login (@RequestBody String email){
         Optional<Employee> employee = employeeService.getEmployeeByEmail(email);
         if(employee.isPresent()){
             return new ResponseEntity<>(employee, HttpStatus.OK);
