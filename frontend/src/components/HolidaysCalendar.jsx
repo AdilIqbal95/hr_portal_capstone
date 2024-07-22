@@ -11,9 +11,10 @@ const HolidaysCalendar = () => {
     const events = [{
         title: "event1",
         allDay: true,
-        start: new Date(2024, 8, 8),
-        end: new Date(2024, 8, 16)
+        start: new Date('2024-09-08T00:00:00'),
+        end: new Date ('2024-09-16T23:59:59')
     }]
+    
     
     return(
     <>
