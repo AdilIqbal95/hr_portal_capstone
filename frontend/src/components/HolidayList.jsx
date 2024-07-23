@@ -1,4 +1,4 @@
-const HolidayList = () => {
+const HolidayList = ({currentUser}) => {
 
   const mockHolidayList = [
     {
@@ -25,12 +25,14 @@ const HolidayList = () => {
     }
 ]
 
-const mappedHolidayList = mockHolidayList.map((holiday) => {
+
+
+const mappedHolidayList = currentUser.holidays.map((holiday) => {
   return (
     <>
     <section>
       <article>
-        <p> {holiday.employeeId}</p>
+        <p> {holiday.id}</p>
         <p> {holiday.startDate}</p>
         <p> {holiday.endDate}</p>
         <p> {holiday.reason}</p>

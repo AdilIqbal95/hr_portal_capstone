@@ -5,8 +5,8 @@ import com.example.hr_portal_capstone.models.enums.Status;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
-import java.time.DayOfWeek;
-import java.time.LocalDate;
+import java.time.*;
+import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 
 
@@ -19,10 +19,10 @@ public class Holiday {
     private long id;
 
     @Column(name = "start_date")
-    private LocalDate startDate;
+    private LocalDateTime startDate;
 
     @Column(name = "end_date")
-    private LocalDate endDate;
+    private LocalDateTime endDate;
 
     @Column(name = "reason")
     @Enumerated(EnumType.STRING)
@@ -37,7 +37,7 @@ public class Holiday {
     @JsonIgnoreProperties({"holidays", "team"})
     private Employee employee;
 
-    public Holiday(Employee employee, LocalDate startDate, LocalDate endDate, Reason reason){
+    public Holiday(Employee employee, LocalDateTime startDate, LocalDateTime endDate, Reason reason){
         this.employee = employee;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -64,19 +64,19 @@ public class Holiday {
         this.employee = employee;
     }
 
-    public LocalDate getStartDate() {
+    public LocalDateTime getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalDate startDate) {
+    public void setStartDate(LocalDateTime startDate) {
         this.startDate = startDate;
     }
 
-    public LocalDate getEndDate() {
+    public LocalDateTime getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(LocalDate endDate) {
+    public void setEndDate(LocalDateTime endDate) {
         this.endDate = endDate;
     }
 
@@ -98,7 +98,7 @@ public class Holiday {
 
     long workingDays() {
         return this.getStartDate().datesUntil(this.getEndDate())
-                .map(LocalDate::getDayOfWeek)
+                .map(LocalDateTime::getDayOfWeek)
                 .filter(day -> !Arrays.asList(DayOfWeek.SATURDAY, DayOfWeek.SUNDAY).contains(day))
                 .count();
     }

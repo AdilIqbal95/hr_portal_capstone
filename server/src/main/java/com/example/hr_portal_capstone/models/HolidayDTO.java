@@ -4,19 +4,20 @@ import com.example.hr_portal_capstone.models.enums.Reason;
 import com.example.hr_portal_capstone.models.enums.Status;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class HolidayDTO {
 
     private long employeeId;
 
-    private LocalDate startDate;
+    private LocalDateTime startDate;
 
-    private LocalDate endDate;
+    private LocalDateTime endDate;
 
     private Reason reason;
 
 
-    public HolidayDTO(long employeeId, LocalDate startDate, LocalDate endDate, Reason reason) {
+    public HolidayDTO(long employeeId, LocalDateTime startDate, LocalDateTime endDate, Reason reason) {
         this.employeeId = employeeId;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -34,19 +35,19 @@ public class HolidayDTO {
         this.employeeId = employeeId;
     }
 
-    public LocalDate getStartDate() {
+    public LocalDateTime getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalDate startDate) {
+    public void setStartDate(LocalDateTime startDate) {
         this.startDate = startDate;
     }
 
-    public LocalDate getEndDate() {
+    public LocalDateTime getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(LocalDate endDate) {
+    public void setEndDate(LocalDateTime endDate) {
         this.endDate = endDate;
     }
 
