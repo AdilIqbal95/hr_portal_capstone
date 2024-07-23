@@ -7,7 +7,7 @@ const localizer = momentLocalizer(moment);
 
 const HolidaysCalendar = ({ events = [] }) => {
   const transformedEvents = events.map(holiday => ({
-    title: `${holiday.employee.firstName}`,
+    title: `${holiday.employee.firstName} ${holiday.employee.lastName}`,
     start: holiday.startDate,
     end: holiday.endDate,
     allDay: true
