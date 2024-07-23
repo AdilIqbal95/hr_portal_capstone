@@ -71,9 +71,9 @@ public class DataLoader implements ApplicationRunner {
         Employee peter = new Employee("Peter", "Parker", "Peter@hotmail.com", northLondon, "London", Grade.JUNIOR,  25 );
         employeeService.createEmployee(peter);
 
-        LocalDateTime mariaStartDate = LocalDateTime.of(2024, Month.AUGUST,10, 23,59);
-        LocalDateTime mariaEndDate = LocalDateTime.of(2024, Month.AUGUST, 17,23,59);
-        LocalDateTime denaStartDate = LocalDateTime.of(2024, Month.JULY, 28,23,59);
+        LocalDateTime mariaStartDate = LocalDateTime.of(2024, Month.AUGUST,7, 23,59);
+        LocalDateTime mariaEndDate = LocalDateTime.of(2024, Month.AUGUST, 14,23,59);
+        LocalDateTime denaStartDate = LocalDateTime.of(2024, Month.JULY, 29,23,59);
         LocalDateTime denaEndDate = LocalDateTime.of(2024, Month.AUGUST, 9,23,59);
         LocalDateTime adilStartDate = LocalDateTime.of(2024, Month.AUGUST, 1,23,59);
         LocalDateTime adilEndDate = LocalDateTime.of(2024, Month.AUGUST, 11,23,59);
