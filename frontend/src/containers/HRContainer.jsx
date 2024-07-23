@@ -55,9 +55,11 @@ const postRequestForHolidays = async (newHolidayRequest) => {
   });
   const newHoliday = await response.json();
   console.log(newHoliday);
-  const tempUser = currentUser;
-  tempUser.holidays = [...currentUser.holidays, newHoliday];
-  setCurrentUser(tempUser);
+  // const tempUser = currentUser;
+  // tempUser.holidays = [...currentUser.holidays, newHoliday];
+  setCurrentUser((prevState) => {
+    return {...prevState, holidays: [...prevState.holidays, newHoliday]}
+  });
   // console.log(currentUser)
   // setCurrentUser(newHoliday);
 }
