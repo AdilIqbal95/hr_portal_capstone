@@ -26,17 +26,38 @@ const HolidayList = ({currentUser}) => {
 ]
 
 
+const handleReason = (reason) => {
+  const reasonWithoutUnderscore = reason.split('_').join(' ')
+
+  const reasonWithoutUnderscoreLower = reasonWithoutUnderscore.toLowerCase().split(' ');
+
+  for (let i = 0; i < reasonWithoutUnderscoreLower.length; i++){
+    reasonWithoutUnderscoreLower[i] = reasonWithoutUnderscoreLower[i][0].toUpperCase() + reasonWithoutUnderscoreLower[i].substr(1);
+  }
+
+    const reasonWithoutUnderscoreStr = reasonWithoutUnderscoreLower.join(' ')
+    return reasonWithoutUnderscoreStr;
+}
+
+
+const handleStatus = (status) => {
+  const statusLower = status.toLowerCase();
+  const finalStatus = statusLower[0].toUpperCase() + statusLower.substr(1);
+
+  return finalStatus;
+}
+
+
 
 const mappedHolidayList = currentUser.holidays.map((holiday) => {
   return (
     <>
     <section>
       <article>
-        <p> {holiday.id}</p>
-        <p> {holiday.startDate}</p>
-        <p> {holiday.endDate}</p>
-        <p> {holiday.reason}</p>
-        <p> {holiday.status}</p>
+        <p> <strong> Start Date: </strong> {new Date(holiday.startDate).toLocaleDateString()}</p>
+        <p> <strong> End Date: </strong> {new Date(holiday.endDate).toLocaleDateString()}</p>
+        <p> <strong> Holiday Reason: </strong>{handleReason(holiday.reason)}</p>
+        <p> <strong> Status: </strong>{handleStatus(holiday.status)}</p>
       </article>
       <article>
         <button>Update</button>

@@ -1,5 +1,5 @@
 
-function UserProfile() {
+function UserProfile({currentUser}) {
 
     return (
       <>
@@ -8,10 +8,10 @@ function UserProfile() {
                 <img src="" alt="Image of user" />
             </article>
             <article>
-                <p>Placeholder name</p>
-                <p>Placeholder email</p>
-                <p>Placeholder team name</p>
-                <p>Placeholder location</p>
+                <p>{currentUser.firstName}</p>
+                <p>{currentUser.email}</p>
+                <p>{currentUser.team.teamName}</p>
+                <p>{currentUser.location}</p>
             </article>
         </section>
         
