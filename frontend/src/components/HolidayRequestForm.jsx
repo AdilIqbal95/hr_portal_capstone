@@ -9,11 +9,25 @@ function HolidayRequestForm() {
     const [startDate, setStartDate] = useState(null);
     const [endDate, setEndDate] = useState(null);
     const [reason, setReason] = useState('');
+
+
+    const handleChange = (event) => {
+      setType(event.target.value);
+    }
   
   const handleSubmit = (event) => {
     event.preventDefault();
 
   };
+
+
+  // // sabah's attempt
+
+
+
+
+
+
 
   return (
     <>

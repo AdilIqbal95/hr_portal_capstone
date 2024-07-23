@@ -1,35 +1,64 @@
+import { Navigate, useNavigate } from "react-router-dom";
 import SearchHolidayApproval from "./SearchHolidayApproval";
+import HolidayList from "./HolidayList";
+import { useState, useEffect } from "react";
 
 
+const HolidayApprovalList = ({allHolidays, patchHoliday, setAllHolidays, markPendingToApproved}) => {
 
-const HolidayApprovalList = () => {
+    // const mockHolidayApprovalList = [
+    //     {
+    //         employeeId: 1,
+    //         startDate: "2024-07-18",
+    //         endDate: "2024-07-25",
+    //         reason: "ANNUAL_LEAVE",
+    //         status: "PENDING"
 
-    const mockHolidayApprovalList = [
-        {
-            employeeId: 1,
-            startDate: "2024-07-18",
-            endDate: "2024-07-25",
-            reason: "ANNUAL_LEAVE",
-            status: "PENDING"
+    //     },
+    //     {
+    //         employeeId: 2,
+    //         startDate: "2024-09-18",
+    //         endDate: "2024-09-25",
+    //         reason: "ANNUAL_LEAVE",
+    //         status: "PENDING"
+    //     },
+    //     {
+    //         employeeId: 3,
+    //         startDate: "2024-11-18",
+    //         endDate: "2024-11-25",
+    //         reason: "ANNUAL_LEAVE",
+    //         status: "PENDING"
+    //     }
+    // ]
 
-        },
-        {
-            employeeId: 2,
-            startDate: "2024-09-18",
-            endDate: "2024-09-25",
-            reason: "ANNUAL_LEAVE",
-            status: "PENDING"
-        },
-        {
-            employeeId: 3,
-            startDate: "2024-11-18",
-            endDate: "2024-11-25",
-            reason: "ANNUAL_LEAVE",
-            status: "PENDING"
+   
+    
+    // const navigate = useNavigate (); 
+    
+
+  
+
+    // const handleApproval = () => {
+    //     patchHoliday(holidayData)
+    //     // patchHoliday(holidayId, {status:"APPROVED"});
+    //     Navigate(`/holidays`)
+
+    //     }
+      
+    
+    //   const handleRejection = () => {
+    //     // patchHoliday(holidayId, {status:"REJECTED"});
+    //     deleteHolidayFromManagerPage()
+    //     Navigate(`/holidays`)
+
+    //     };
+
+        
+        const handleButtonClickForMark = () => {
+            markPendingToApproved();
         }
-    ]
 
-    const mappedHolidayApprovalList = mockHolidayApprovalList.map((holiday) => {
+    const mappedHolidayApprovalList = allHolidays.map((holiday) => {
         return(
             <>
             <section>
@@ -41,10 +70,10 @@ const HolidayApprovalList = () => {
                 <p> {holiday.status}</p>
             </article>
             <article>
-                <button>Reject</button>
+                <button id="approval_button" onClick={handleButtonClickForMark}>Approve</button>
             </article>
             <article>
-                <button>Approve</button>
+                <button id="reject_button"onClick={handleButtonClickForMark}>Reject</button>
             </article>
             </section>
             </>

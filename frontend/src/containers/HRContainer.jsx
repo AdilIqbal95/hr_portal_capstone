@@ -32,6 +32,26 @@ function HRContainer() {
     setAllTeams(data);
   }
 
+  const markPendingToApproved = async () => {
+    await fetch (`http://localhost:8080/holidays/${employee.id}?status=Approved`, {
+        method: "PATCH",
+        headers: {"Content-Type": "application/json"}
+    } );
+    await fetchAllHoliday();
+}
+
+
+
+
+  // const updateHolidayStatus = async () = {
+  //   const response = await fetch ("localhost:8080/holidays/${id}", {
+  //     method: "PATCH",
+  //     headers:{"Content-Type": "applidation/json"},
+  //     body: JSON.stringify(updateHolidayStatus)
+  //   })
+  // }
+
+
   // const url = ('localhost:8080/employees/login?' + new URLSearchParams({email:emailInput}).toString())
 
   const postLoginEmail = async (emailInput) => {
@@ -68,7 +88,7 @@ function HRContainer() {
           },
           {
             path: "/manager-dashboard",
-            element: <ManagerPage/>
+            element: <ManagerPage allHolidays={allHolidays}/>
           },
           {
             path: "/holidays",
