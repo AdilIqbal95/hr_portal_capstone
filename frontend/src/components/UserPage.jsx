@@ -4,6 +4,10 @@ import UserProfile from "./UserProfile";
 
 function UserPage({currentUser}) {
 
+    if (currentUser === null) {
+      return null;
+    } 
+
     return (
       <>
         <h1>User Page</h1>

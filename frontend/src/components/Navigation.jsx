@@ -4,7 +4,7 @@ function Navigation() {
 
     return (
       <>
-        <nav>
+        <nav className="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
             <ul>
                 <li><Link to = "/user-dashboard">User Dashboard</Link></li>
                 <li><Link to = "/manager-dashboard">Manager Dashboard</Link></li>

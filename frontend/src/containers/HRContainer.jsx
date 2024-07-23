@@ -8,10 +8,10 @@ import LoginPage from "../components/LoginPage";
 
 function HRContainer() {
 
-  const [currentUser, setCurrentUser] = useState();
-  const [allEmployees, setAllEmployees] = useState()
-  const [allHolidays, setAllHolidays] = useState()
-  const [allTeams, setAllTeams] = useState()
+  const [currentUser, setCurrentUser] = useState(null);
+  const [allEmployees, setAllEmployees] = useState([])
+  const [allHolidays, setAllHolidays] = useState([])
+  const [allTeams, setAllTeams] = useState([])
 
 
   const fetchAllEmployees = async () => {
