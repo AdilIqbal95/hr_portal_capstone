@@ -32,8 +32,9 @@ const HolidayApprovalList = () => {
     const mappedHolidayApprovalList = mockHolidayApprovalList.map((holiday) => {
         return(
             <>
-            <section>
-            <article>
+            <section className="content-grid">
+    
+            <article className="card">
                 <p> {holiday.employeeId}</p>
                 <p> {holiday.startDate}</p>
                 <p> {holiday.endDate}</p>
