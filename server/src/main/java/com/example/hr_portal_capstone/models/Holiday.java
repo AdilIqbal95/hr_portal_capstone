@@ -97,7 +97,9 @@ public class Holiday {
     }
 
     long workingDays() {
+
         return this.getStartDate().toLocalDate().datesUntil(this.getEndDate().toLocalDate().plusDays(1))
+
                 .map(LocalDate::getDayOfWeek)
                 .filter(day -> !Arrays.asList(DayOfWeek.SATURDAY, DayOfWeek.SUNDAY).contains(day))
                 .count();
