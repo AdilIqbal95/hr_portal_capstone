@@ -1,7 +1,7 @@
 import {Link, Outlet} from 'react-router-dom'
 
 function Navigation() {
-
+    
     return (
       <>
         <nav className="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">

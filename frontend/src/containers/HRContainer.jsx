@@ -122,35 +122,51 @@ const postRequestForHolidays = async (newHolidayRequest) => {
   )
   
   const juniorRouter = createBrowserRouter(
-    [
-      {
-        path: "/",
-        element: <Navigation/>,
-        children: [
-          {
-            path:"/",
-            element:<LoginPage allEmployees={allEmployees} setCurrentUser={setCurrentUser}/>
-          },
-          {
-            path: "/user-dashboard",
-            element: <UserPage allEmployees={allEmployees} currentUser={currentUser}/>
-          },
-          {
-            path: "/holidays",
-            element: <HolidaysPage allHolidays={allHolidays}/>
-          },
+      [
+        {
+          path: "/",
+          element: <Navigation/>,
+          children: [
+            {
+              path:"/",
+              element:<LoginPage allEmployees={allEmployees} setCurrentUser={setCurrentUser}/>
+            },
+            {
+              path: "/user-dashboard",
+              element: <UserPage allEmployees={allEmployees} currentUser={currentUser}/>
+            },
+            {
+              path: "/holidays",
+              element: <HolidaysPage allHolidays={allHolidays}/>
+            },
 
-        ]
+          ]
+        }
+      ]
+    )
+
+    const conditionalRender = () => {
+      if (currentUser.grade == 'JUNIOR') {
+        return (
+          <>
+          <RouterProvider router={juniorRouter} />
+         </>
+        )
+      } else if (currentUser.grade == 'MANAGER')  {
+        return (
+          <>
+            <RouterProvider router={managerRouter} />
+          </>
+        )
+      } else {
+        return (
+          <LoginPage allEmployees={allEmployees} setCurrentUser={setCurrentUser}/>
+        )
       }
-    ]
+    }
 
-
-  )
     return (
-      <>
-       <RouterProvider router={managerRouter} />
-
-      </>
+      {conditionalRender}
     )
   }
   
