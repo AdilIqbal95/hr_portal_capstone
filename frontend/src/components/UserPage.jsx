@@ -7,10 +7,10 @@ function UserPage({currentUser}) {
     return (
       <>
         <h1>User Page</h1>
-        <h2>{currentUser}</h2>
+        {/* <h2>{currentUser.firstName}</h2> */}
         <UserProfile/>
         <HolidayRequestForm/>
-        <HolidaysList/>
+        <HolidaysList currentUser={currentUser}/>
       
       </>
     )

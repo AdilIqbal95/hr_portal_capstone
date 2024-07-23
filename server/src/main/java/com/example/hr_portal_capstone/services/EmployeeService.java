@@ -6,6 +6,7 @@ import com.example.hr_portal_capstone.repositories.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.swing.text.html.Option;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -19,7 +20,7 @@ public class EmployeeService {
     EmployeeRepository employeeRepository;
 
 
-    public List<Employee> getAllEmployeesById() {
+    public List<Employee> getAllEmployees() {
         return employeeRepository.findAll();
     }
 
@@ -73,7 +74,15 @@ public class EmployeeService {
         return daysInBetween;
     }
 
+
+    public Optional<Employee> getEmployeeByEmail(String email){
+        return employeeRepository.findByEmailEquals(email);
+    }
+
+
 }
+
+
 
 
 

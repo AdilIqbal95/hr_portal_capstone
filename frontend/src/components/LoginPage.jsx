@@ -3,7 +3,7 @@ import {useNavigate} from "react-router-dom";
 
 
 
-function LoginPage({allEmployees, setCurrentUser}) {
+function LoginPage({setCurrentUser, postLoginEmail}) {
 
     const [email, setEmail] = useState("");
     const navigate = useNavigate();
@@ -22,26 +22,10 @@ function LoginPage({allEmployees, setCurrentUser}) {
 
       const handleSubmit = (e) => {
         e.preventDefault();
-        allEmployees.map((employee)=> {
-            if (employee.email == email){
-              setCurrentUser({email
-              })
-              navigate('/user-dashboard')
-            }
-            
-        })
-        // This need to be done in back end
-        // Post request with email as body
-        // Extract req body from controller, write service in employee findUserByEmail (derived query)
+        postLoginEmail(email)
         // update db email column in db to be unique (research for spring)
 
-        // alert("Incorrect login")
-        
-
-        
-
-
-
+        navigate('/user-dashboard')
         // if junior (dashboard and holiday) if manager (display all pages)
         // 
       }
