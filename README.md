@@ -2,12 +2,26 @@
 
 ## By TimeTrackers ⏰   - “Because your time off should be a vacation, not a calculation!”
 
+## Table of Contents
+
+1. [Summary](##Summary)
+2. [Diagrams](##Diagrams)
+3. [Planning](##Planning)
+4. [MVP](#MVP)
+5. [Extensions](#Extensions)
+6. [API Routes](#API_Routes)
+7. [Endpoints](#Endpoints)
+8. [Installation Instructions](#Installation_Instructions)
+9. [Acknowledgements](#Acknowledgements)
+10. [Credits](#Credits)
+11. [Licences](#licences)
+
+
+## Summary
 
 #### A shortlist of challenges we aim to solve for Rainforest Retail:
 - As more employees are added it becomes harder to get an overview of availability and where everyone is working on a given day
 - Keeping employee records up to date is time-consuming and error-prone
-
-## Summary
 
 RainforestRetail needs tailored solutions to improve the recording and maintenance of employee availability. The current use of paper records within the business requires too many resources and is unproductive. By combining all the physical diaries to be placed on a digital platform we could reduce the number of conflicts and improve overall employee productivity.
 
