@@ -40,7 +40,6 @@ function HRContainer() {
     await fetchAllHoliday();
 }
 
-// post method - add holiday form 
 useEffect(()=>{
 console.log("Current User Updated", currentUser)
 } ,[currentUser])
@@ -73,8 +72,6 @@ const postRequestForHolidays = async (newHolidayRequest) => {
   // }
 
 
-  // const url = ('localhost:8080/employees/login?' + new URLSearchParams({email:emailInput}).toString())
-
   const postLoginEmail = async (emailInput) => {
     const response = await fetch (`http://localhost:8080/employees/login`, {
       method: "POST", 
@@ -97,19 +94,22 @@ const postRequestForHolidays = async (newHolidayRequest) => {
     [
       {
         path: "/",
-        element: <Navigation/>,
+        element: <Navigation currentUser={currentUser}/>,
         children: [
           {
             path:"/",
             element:<LoginPage postLoginEmail = {postLoginEmail}setCurrentUser={setCurrentUser}/>
-          },
+          }, 
+          ...( currentUser?.grade == 'MANAGER' ? [ 
+            {
+              path: "/manager-dashboard",
+              element: <ManagerPage allHolidays={allHolidays}/>
+            }
+          ] : []  
+          ),
           {
             path: "/user-dashboard",
             element: <UserPage allEmployees={allEmployees} currentUser={currentUser} postRequestForHolidays={postRequestForHolidays}/>
-          },
-          {
-            path: "/manager-dashboard",
-            element: <ManagerPage allHolidays={allHolidays}/>
           },
           {
             path: "/holidays",
@@ -120,54 +120,41 @@ const postRequestForHolidays = async (newHolidayRequest) => {
       }
     ]
   )
-  
-  const juniorRouter = createBrowserRouter(
-      [
-        {
-          path: "/",
-          element: <Navigation/>,
-          children: [
-            {
-              path:"/",
-              element:<LoginPage allEmployees={allEmployees} setCurrentUser={setCurrentUser}/>
-            },
-            {
-              path: "/user-dashboard",
-              element: <UserPage allEmployees={allEmployees} currentUser={currentUser}/>
-            },
-            {
-              path: "/holidays",
-              element: <HolidaysPage allHolidays={allHolidays}/>
-            },
 
-          ]
-        }
-      ]
-    )
+  // const firstRouter = createBrowserRouter(
+  //   [
+  //     {
+  //       path: "/",
+  //       element: <Navigation/>,
+  //       children: [
+  //         {
+  //           path:"/",
+  //           element:<LoginPage postLoginEmail = {postLoginEmail}setCurrentUser={setCurrentUser}/>
+  //         },
+  //         {
+  //           path: "/user-dashboard",
+  //           element: <UserPage allEmployees={allEmployees} currentUser={currentUser} postRequestForHolidays={postRequestForHolidays}/>
+  //         },
+  //         {
+  //           path: "/manager-dashboard",
+  //           element: <ManagerPage allHolidays={allHolidays}/>
+  //         },
+  //         {
+  //           path: "/holidays",
+  //           element: <HolidaysPage allHolidays={allHolidays}/>
+  //         },
 
-    const conditionalRender = () => {
-      if (currentUser.grade == 'JUNIOR') {
-        return (
-          <>
-          <RouterProvider router={juniorRouter} />
-         </>
-        )
-      } else if (currentUser.grade == 'MANAGER')  {
-        return (
-          <>
-            <RouterProvider router={managerRouter} />
-          </>
-        )
-      } else {
-        return (
-          <LoginPage allEmployees={allEmployees} setCurrentUser={setCurrentUser}/>
-        )
-      }
-    }
+  //       ]
+  //     }
+  //   ]
+  // )
 
-    return (
-      <h1>Placeholder</h1>
-    )
-  }
+  return (
+    <>
+      <RouterProvider router={managerRouter} />
+    </>
+
+  )
+}
   
   export default HRContainer;
