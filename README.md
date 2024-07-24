@@ -36,7 +36,8 @@ We aim to make paper records a thing of the past. Our system specifically identi
 1. Component Diagram
 2. Class Diagram
 3. Entity Relationship Diagram
-4. User Flow Diagram
+4. Wireframe
+
 
 
 
