@@ -41,7 +41,6 @@ function HRContainer() {
     await fetchAllHoliday();
 }
 
-// post method - add holiday form 
 useEffect(()=>{
 console.log("Current User Updated", currentUser)
 } ,[currentUser])
@@ -56,11 +55,9 @@ const postRequestForHolidays = async (newHolidayRequest) => {
   });
   const newHoliday = await response.json();
   console.log(newHoliday);
-  const tempUser = currentUser;
-  tempUser.holidays = [...currentUser.holidays, newHoliday];
-  setCurrentUser(tempUser);
-  // console.log(currentUser)
-  // setCurrentUser(newHoliday);
+  setCurrentUser((prevState) => {
+    return {...prevState, holidays: [...prevState.holidays, newHoliday]}
+  });
 }
 
 
@@ -84,8 +81,6 @@ const fetchRandomFact = async () => {
   //   })
   // }
 
-
-  // const url = ('localhost:8080/employees/login?' + new URLSearchParams({email:emailInput}).toString())
 
   const postLoginEmail = async (emailInput) => {
     const response = await fetch (`http://localhost:8080/employees/login`, {
@@ -111,21 +106,24 @@ const fetchRandomFact = async () => {
     [
       {
         path: "/",
-        element: <Navigation/>,
+        element: <Navigation currentUser={currentUser}/>,
         children: [
           {
             path:"/",
             element:<LoginPage postLoginEmail = {postLoginEmail}setCurrentUser={setCurrentUser}/>
-          },
+          }, 
+          ...( currentUser?.grade == 'MANAGER' ? [ 
+            {
+              path: "/manager-dashboard",
+              element: <ManagerPage allHolidays={allHolidays}/>
+            }
+          ] : []  
+          ),
           {
             path: "/user-dashboard",
             element: <UserPage allEmployees={allEmployees} currentUser={currentUser} postRequestForHolidays={postRequestForHolidays}/>
           },
           {
-            path: "/manager-dashboard",
-            element: <ManagerPage allHolidays={allHolidays}/>
-          },
-          {
             path: "/holidays",
             element: <HolidaysPage allHolidays={allHolidays}/>
           },
@@ -134,38 +132,43 @@ const fetchRandomFact = async () => {
       }
     ]
   )
-  
-  const juniorRouter = createBrowserRouter(
-    [
-      {
-        path: "/",
-        element: <Navigation/>,
-        children: [
-          {
-            path:"/",
-            element:<LoginPage allEmployees={allEmployees} setCurrentUser={setCurrentUser}/>
-          },
-          {
-            path: "/user-dashboard",
-            element: <UserPage allEmployees={allEmployees} currentUser={currentUser}/>
-          },
-          {
-            path: "/holidays",
-            element: <HolidaysPage allHolidays={allHolidays}/>
-          },
 
-        ]
-      }
-    ]
+  // const firstRouter = createBrowserRouter(
+  //   [
+  //     {
+  //       path: "/",
+  //       element: <Navigation/>,
+  //       children: [
+  //         {
+  //           path:"/",
+  //           element:<LoginPage postLoginEmail = {postLoginEmail}setCurrentUser={setCurrentUser}/>
+  //         },
+  //         {
+  //           path: "/user-dashboard",
+  //           element: <UserPage allEmployees={allEmployees} currentUser={currentUser} postRequestForHolidays={postRequestForHolidays}/>
+  //         },
+  //         {
+  //           path: "/manager-dashboard",
+  //           element: <ManagerPage allHolidays={allHolidays}/>
+  //         },
+  //         {
+  //           path: "/holidays",
+  //           element: <HolidaysPage allHolidays={allHolidays}/>
+  //         },
 
+  //       ]
+  //     }
+  //   ]
+  // )
+
+  return (
+    <>
+      <RouterProvider router={managerRouter} />
+    </>
 
   )
-    return (
-      <div>     
-          <RouterProvider router={managerRouter} />
 
-      </div>
-    )
-  }
+}
+
   
   export default HRContainer;
