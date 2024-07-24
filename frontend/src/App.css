@@ -1,10 +1,8 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 4rem;
   text-align: center;
 }
-
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -17,7 +15,6 @@
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
-
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -26,17 +23,87 @@
     transform: rotate(360deg);
   }
 }
-
+@keyframes fadeIn {
+  from { opacity: 0.5; }
+  to { opacity: 1; }
+}
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
 }
-
 .card {
   padding: 2em;
 }
-
 .read-the-docs {
   color: #888;
+}
+.spinner {
+  border: 4px solid #F3F3F3;
+  border-top: 4px solid #3498DB;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+}
+.active-link {
+  background-color: rgba(21, 21, 21, 0.321);
+  color: white !important;
+}
+.navigation-bar a:hover {
+  background-color: rgba(21, 21, 21, 0.321);
+  color: white !important;
+}
+.navigation-bar {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(21, 21, 21, 0.321);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+@keyframes fadeIn {
+  from { opacity: 0.5; }
+  to { opacity: 1; }
+}
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+.card {
+  padding: 2em;
+}
+.read-the-docs {
+  color: #888;
+}
+.active-link {
+  background-color: rgba(240, 157, 56, 0.321);
+  color: white !important;
+}
+.navigation-bar a {
+  text-decoration: none;
+  color: black;
+  padding: 10px 20px;
+  display: block;
+}
+.navigation-bar a:hover {
+  background-color: rgb(3, 72, 17);
+  color: white !important;
+}
+.navigation-bar {
+    background-color: #97c897fd; /* Light green color */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid #000;
+    padding: 1rem;
+}
+.navigation-bar .nav-link {
+  color: black;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
 }
