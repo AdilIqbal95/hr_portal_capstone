@@ -36,7 +36,8 @@ function LoginPage({setCurrentUser, postLoginEmail}) {
 
 
       return (
-        <Container>
+        <div className="login-background ">
+        <Container >
           <Card.Title className="">
               <h1>Welcome To Rainforest!</h1>
                  <Form onSubmit={handleSubmit} className="mt-3">
@@ -45,6 +46,7 @@ function LoginPage({setCurrentUser, postLoginEmail}) {
               </Form>
               </Card.Title>
         </Container>
+        </div>
       );
     };
   

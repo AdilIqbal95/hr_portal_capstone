@@ -13,6 +13,7 @@ function Navigation() {
                 <Nav.Link as={Link} to = "/holidays" aria-label="Holidays">Holidays</Nav.Link>
                 <Nav.Link as={Link}to = "/" aria-label="Sign Out">Sign Out</Nav.Link>
          </ul>
+
         </Navbar>
         <Outlet/>
       </>

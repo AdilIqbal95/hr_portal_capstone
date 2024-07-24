@@ -1,78 +1,60 @@
 import SearchHolidayApproval from "./SearchHolidayApproval";
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { useNavigate } from "react-router-dom";
+import { FaCalendarAlt, FaTree, FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
 
 
 const HolidayApprovalList = ({allHolidays, patchHoliday, setAllHolidays, markPendingToApproved}) => {
 
-    // const mockHolidayApprovalList = [
-    //     {
-    //         employeeId: 1,
-    //         startDate: "2024-07-18",
-    //         endDate: "2024-07-25",
-    //         reason: "ANNUAL_LEAVE",
-    //         status: "PENDING"
-
-    //     },
-    //     {
-    //         employeeId: 2,
-    //         startDate: "2024-09-18",
-    //         endDate: "2024-09-25",
-    //         reason: "ANNUAL_LEAVE",
-    //         status: "PENDING"
-    //     },
-    //     {
-    //         employeeId: 3,
-    //         startDate: "2024-11-18",
-    //         endDate: "2024-11-25",
-    //         reason: "ANNUAL_LEAVE",
-    //         status: "PENDING"
-    //     }
-    // ]
-
    
     
-    // const navigate = useNavigate (); 
+    const navigate = useNavigate (); 
     
 
   
 
-    // const handleApproval = () => {
-    //     patchHoliday(holidayData)
-    //     // patchHoliday(holidayId, {status:"APPROVED"});
-    //     Navigate(`/holidays`)
+    const handleApproval = () => {
+        patchHoliday(holidayData)
+        // patchHoliday(holidayId, {status:"APPROVED"});
+        Navigate(`/holidays`)
 
-    //     }
+        }
       
     
-    //   const handleRejection = () => {
-    //     // patchHoliday(holidayId, {status:"REJECTED"});
-    //     deleteHolidayFromManagerPage()
-    //     Navigate(`/holidays`)
+      const handleRejection = () => {
+        // patchHoliday(holidayId, {status:"REJECTED"});
+        deleteHolidayFromManagerPage()
+        Navigate(`/holidays`)
 
-    //     };
+        };
 
         
         const handleButtonClickForMark = () => {
             markPendingToApproved();
         }
     
-    const mappedHolidayApprovalList = mockHolidayApprovalList.map((holiday) => {
+    const mappedHolidayApprovalList = allHolidays.map((holiday) => {
         return(
-            <Col xs={12} md={6} key={holiday.employeeId}>
-                <Card className="mt-3">
-                        <Card.Title>Employee Name: {holiday.employeeId}</Card.Title>
-                            <p> {holiday.employeeId}</p>
-                            <p> {holiday.startDate}</p>
-                            <p> {holiday.endDate}</p>
-                            <p> {holiday.reason}</p>
-                            <p> {holiday.status}</p>
-                        <Button id="approval_button" onClick={handleButtonClickForMark}>Reject</Button>
-                        <Button id="reject_button" onClick={handleButtonClickForMark}>Approve</Button>
-
+            <Col xs={12} md={6} lg={4} key={holiday.employeeId} >
+                <Card >
+                        <Card.Title><strong> {holiday.employee.firstName} {holiday.employee.lastName}</strong></Card.Title>
+                        <Card.Text>
+                            <p><strong><FaCalendarAlt /> Start Date: </strong>{holiday.startDate}</p>
+                            <p><strong><FaCalendarAlt /> End Date: </strong>{holiday.endDate}</p>
+                            <p><strong> Reason: </strong>{holiday.reason}</p>
+                            <p><strong> Status: </strong> {holiday.status}</p>
+                         </Card.Text>
+                         <Button variant="danger" onClick={() => handleRejection(holiday.employeeId)}>
+                            <FaTimesCircle className="me-2" />Reject
+                        </Button>
+                        <Button variant="success"  onClick={() => handleApproval(holiday.employeeId)}>
+                            <FaCheckCircle className="me-2" />Approve
+                        </Button>
                 </Card>
             </Col>
         )
     })
+
 
     return(
         <Container className="mt-5">
