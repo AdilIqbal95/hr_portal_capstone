@@ -22,10 +22,6 @@ function HolidayRequestForm({ postRequestForHolidays, newHolidayRequest, current
         postRequestForHolidays(newHolidayRequest);
     };
 
-
-
-    
-
     return (
         <>
             <section>

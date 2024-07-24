@@ -4,8 +4,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
 import { FaUserPlus } from 'react-icons/fa';
 
+
 const EmployeeForm = ({ openForm, setOpenForm, postEmployee }) => {
   const navigate = useNavigate();
+
 
   const handleToggle = () => setOpenForm(!openForm);
     
@@ -19,10 +21,12 @@ const EmployeeForm = ({ openForm, setOpenForm, postEmployee }) => {
     team: ""
   });
 
+
   const handleInputChange = (e) => {
     const propertyName = e.target.name;
     const value = e.target.value;
     const copiedEmployee = { ...newEmployee };
+
 
     setNewEmployee(copiedEmployee);
   };
@@ -94,6 +98,7 @@ const EmployeeForm = ({ openForm, setOpenForm, postEmployee }) => {
                 </Form.Group>
               </Col>
               <Col xs={12} md={6}>
+
                 <Form.Group>
                   <Form.Label>Location</Form.Label>
                   <Form.Control

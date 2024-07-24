@@ -7,6 +7,10 @@ function UserPage({currentUser, postRequestForHolidays, allEmployees}) {
     if (currentUser === null) {
       return null;
     } 
+    // if (currentUser == {}) {
+    //   return <h1>Hi</h1>;
+    // } 
+
 
     return (
       <>
