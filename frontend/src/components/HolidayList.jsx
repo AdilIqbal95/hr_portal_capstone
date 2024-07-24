@@ -55,8 +55,8 @@ const handleStatus = (status) => {
 
 const mappedHolidayList = currentUser.holidays.map((holiday) => {
     return (
-      <Col xs={12} md={6} lg={4} key={holiday.employeeId} className="holiday-card">
-        <Card className="mb-4">
+      <Col xs={12} md={12} lg={12} key={holiday.employeeId} className="holiday-card mt=5">
+        <Card className="mb-4 mt=5">
           <Card.Body>
             <Card.Title className="text-success">
               <FaCalendarAlt /> {new Date(holiday.startDate).toLocaleDateString()} - {new Date(holiday.endDate).toLocaleDateString()}
