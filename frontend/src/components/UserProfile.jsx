@@ -1,22 +1,18 @@
+import React from 'react';
+import { Card } from 'react-bootstrap';
 
 function UserProfile({currentUser}) {
 
-    return (
-      <>
-        <section>
-            <article>
-                <img src="" alt="Image of user" />
-            </article>
-            <article>
-                <p>{currentUser.firstName}</p> 
-                <p>{currentUser.email}</p>
-                <p>{currentUser.team.teamName}</p>
-                <p>{currentUser.location}</p>
-            </article>
-        </section>
-        
-
-      </>
+  return (
+<Card className="user-profile">
+            <Card.Img variant="top" src="path/to/your/profile-image.jpg" alt="Image of user" />
+            <Card.Body>
+                <Card.Title className="text-center">{currentUser.firstName} {currentUser.lastName}</Card.Title>
+                <Card.Text className="text-center">{currentUser.email}</Card.Text>
+                <Card.Text className="text-center"> {currentUser.team.teamName}</Card.Text>
+                <Card.Text className="text-center"> {currentUser.location}</Card.Text>
+            </Card.Body>
+        </Card>
     )
   }
   

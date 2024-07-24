@@ -190,3 +190,22 @@
 
 }
 
+.user-profile {
+  width: 40%;
+  border: 2px;
+  border-radius: 15px;
+  background: linear-gradient(to bottom right, #4ec87d81, #a6fb8f55);
+  color: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.user-profile .card-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.user-profile .card-text {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
