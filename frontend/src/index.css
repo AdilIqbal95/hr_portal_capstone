@@ -13,6 +13,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html, body {
+  background-image: url("src/assets/background.png");  background-size: cover;
+  font-family: Arial, sans-serif;
+}
+
 a {
   font-weight: 500;
   color: #646cff;

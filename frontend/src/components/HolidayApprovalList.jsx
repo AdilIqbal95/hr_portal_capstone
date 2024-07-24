@@ -1,10 +1,14 @@
 import { Navigate, useNavigate } from "react-router-dom";
 import SearchHolidayApproval from "./SearchHolidayApproval";
+<<<<<<< Updated upstream
 import HolidayList from "./HolidayList";
 import { useState, useEffect } from "react";
 
 
 const HolidayApprovalList = ({allHolidays, patchHoliday, setAllHolidays, markPendingToApproved}) => {
+=======
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+>>>>>>> Stashed changes
 
     // const mockHolidayApprovalList = [
     //     {
@@ -57,6 +61,7 @@ const HolidayApprovalList = ({allHolidays, patchHoliday, setAllHolidays, markPen
         const handleButtonClickForMark = () => {
             markPendingToApproved();
         }
+<<<<<<< Updated upstream
 
     const mappedHolidayApprovalList = allHolidays.map((holiday) => {
         return(
@@ -78,23 +83,34 @@ const HolidayApprovalList = ({allHolidays, patchHoliday, setAllHolidays, markPen
             </article>
             </section>
             </>
+=======
+    ]
+    const mappedHolidayApprovalList = mockHolidayApprovalList.map((holiday) => {
+        return(
+            <Col xs={12} md={6} key={holiday.employeeId}>
+                <Card className="mt-3">
+                        <Card.Title>Employee Name: {holiday.employeeId}</Card.Title>
+                            <p> {holiday.employeeId}</p>
+                            <p> {holiday.startDate}</p>
+                            <p> {holiday.endDate}</p>
+                            <p> {holiday.reason}</p>
+                            <p> {holiday.status}</p>
+                        <Button>Reject</Button>
+                        <Button >Approve</Button>
+
+                </Card>
+            </Col>
+>>>>>>> Stashed changes
         )
     })
 
     return(
-    <>
-    <h1>Holiday Approval List</h1>
-   <section>
-    
-    <SearchHolidayApproval/>
-   {mappedHolidayApprovalList}
-
-   </section> 
-
-    
-    </>
-)
-
+        <Container className="mt-5">
+            <h1>Holiday Approval List</h1>
+             <SearchHolidayApproval />
+                 {mappedHolidayApprovalList}
+        </Container>
+    )
 }
 
 export default HolidayApprovalList;

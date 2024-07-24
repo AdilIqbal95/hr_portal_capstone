@@ -12,6 +12,7 @@ function HRContainer() {
   const [allEmployees, setAllEmployees] = useState([])
   const [allHolidays, setAllHolidays] = useState([])
   const [allTeams, setAllTeams] = useState([])
+  const [openForm, setOpenForm] = useState(false);
 
 
   const fetchAllEmployees = async () => {
@@ -149,10 +150,10 @@ const postRequestForHolidays = async (newHolidayRequest) => {
 
   )
     return (
-      <>
-       <RouterProvider router={managerRouter} />
+      <div>     
+          <RouterProvider router={managerRouter} />
 
-      </>
+      </div>
     )
   }
   

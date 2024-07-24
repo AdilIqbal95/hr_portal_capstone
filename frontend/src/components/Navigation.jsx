@@ -6,7 +6,7 @@ function Navigation() {
 
     return (
       <>
-        <Navbar  bg="dark" variant="dark" expand="sm" fixed="top" className="navigation-bar">
+        <Navbar expand="sm" fixed="top" aria-label="Main navigation">
           <ul className='navigation-bar'>
                 <Nav.Link as={Link} to = "/user-dashboard" aria-label="User Dashboard">User Dashboard</Nav.Link>
                 <Nav.Link as={Link} to = "/manager-dashboard" aria-label="Manager Dashboard">Manager Dashboard</Nav.Link>
