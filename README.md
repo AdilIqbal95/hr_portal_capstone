@@ -34,6 +34,7 @@ We aim to make paper records a thing of the past. Our system specifically identi
 - React Modal
 - React Big Calendar
 - SpringBoot
+- BootStrap
 
 
 
@@ -42,7 +43,7 @@ We aim to make paper records a thing of the past. Our system specifically identi
 * [x] Create Trello board to track tasks to do, completed tasks, and log errors [Trello Board](https://trello.com/b/9Ep8GAai/capstone-project)
 * [x] Create [ERD diagram](documentation/ERDDiagrams.png)
 * [x] Create [UML diagram](documentation/UMLDiagram.png) 
-* [x] Create Wireframe 
+* [x] Create [Wireframe](documentation/) 
 * [x] [Business Template](documentation/) 
 * [x] [Risk Template](documentation/) 
 * [x] [Retrospective](documentation/TimeTrackersRetrospective.png) 
@@ -63,10 +64,13 @@ We aim to make paper records a thing of the past. Our system specifically identi
 
 ## Extensions
 
-* [ ]  Add personal calendar in user - with days remaining counter and days til holiday counter 
-* [ ] Add filter form in holiday list (calendar)
 * [ ] Add update and delete functions in the employee holiday list
 * [ ] Mobile integration - mobile friendly (react-bootstrap)
+
+
+## Extensions For The Future
+* [ ] Add personal calendar in user - with days remaining counter and days til holiday counter
+* [ ] Add filter form in holiday list (calendar)
 
 
 ## API Routes
@@ -176,7 +180,9 @@ npm run dev
 
 ## Acknowledgements
 
-Thank you to all the BNTA Technology trainers (and community staff) for supporting our journey in coding. 
+Thank you to all the BNTA Technology trainers (and community staff) for supporting our journey in coding over the last three months.
+
+We really could not have achieved any of this without you! 
 
 Colin, 
 Zsolt,
@@ -201,6 +207,7 @@ Lewis
 
 ## Resources
 
+- [BootStrap](https://getbootstrap.com/)
 
 
 ## Licenses
