@@ -55,7 +55,7 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee( String firstName, String lastName, String email, Team team, String location, Grade grade, int totalHoliday) {
+    public Employee( String firstName, String lastName, String email, Team team, String location, Grade grade) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -63,7 +63,7 @@ public class Employee {
         this.location = location;
         this.grade = grade;
         this.holidays = new ArrayList<>();
-        this.totalHoliday = totalHoliday;
+        this.totalHoliday = 25;
     }
 
 

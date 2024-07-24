@@ -1,6 +1,8 @@
 package com.example.hr_portal_capstone.services;
 
 import com.example.hr_portal_capstone.models.Employee;
+import com.example.hr_portal_capstone.models.EmployeeDTO;
+import com.example.hr_portal_capstone.models.Team;
 import com.example.hr_portal_capstone.models.enums.Grade;
 import com.example.hr_portal_capstone.repositories.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,9 @@ public class EmployeeService {
     @Autowired
     EmployeeRepository employeeRepository;
 
+    @Autowired
+    TeamService teamService;
+
 
     public List<Employee> getAllEmployees() {
         return employeeRepository.findAll();
@@ -28,8 +33,11 @@ public class EmployeeService {
         return employeeRepository.findById(id);
     }
 
-    public Employee createEmployee(Employee employee) {
-        return employeeRepository.save(employee);
+    public Employee createEmployee(EmployeeDTO employeeDTO) {
+
+        Team team = teamService.getTeamById(employeeDTO.getTeamId()).get();
+        Employee newEmployee = new Employee(employeeDTO.getFirstName(), employeeDTO.getLastName(), employeeDTO.getEmail(),team,employeeDTO.getLocation(),employeeDTO.getGrade());
+        return employeeRepository.save(newEmployee);
     }
 
     public void deleteEmployeeById(long id) {
