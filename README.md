@@ -80,7 +80,7 @@ We aim to make paper records a thing of the past. Our system specifically identi
 ## Extensions
 * [ ] Managers  approve or reject employees' holiday
 * [ ] Managers can add an employee form
-* [ ] Add update and delete functions in the employee holiday list
+* [ ] Update and Delete functions in the employee holiday list
 * [ ] Mobile integration - mobile friendly (react-bootstrap)
 
 
