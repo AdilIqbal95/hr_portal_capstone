@@ -124,6 +124,10 @@ const fetchRandomFact = async () => {
             element: <UserPage allEmployees={allEmployees} currentUser={currentUser} postRequestForHolidays={postRequestForHolidays}/>
           },
           {
+            path: "/manager-dashboard",
+            element: <ManagerPage allHolidays={allHolidays} openForm={openForm} setOpenForm={setOpenForm} employeeName={currentUser ? currentUser.firstName : "Manager"}/>
+          },
+          {
             path: "/holidays",
             element: <HolidaysPage allHolidays={allHolidays}/>
           },

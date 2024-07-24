@@ -173,14 +173,19 @@
 }
 
 
-html, body {
+/* body {
   background-image: url('/Users/mariasharif/Documents/bnta_work/week_12/hr_portal_capstone/frontend/src/assets/background.png');  background-size: cover;
   font-family: Arial, sans-serif;
+} */
+
+
+.calendar-container{
+  padding: 10px;
+  background-color: white;
+  
 }
 
+.dropdown-button {
+  width: 100%;
 
-
-
-
-
-
+}

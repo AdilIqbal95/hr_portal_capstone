@@ -58,7 +58,6 @@ const HolidayApprovalList = ({allHolidays, patchHoliday, setAllHolidays, markPen
 
     return(
         <Container className="mt-5">
-            <h1>Holiday Approval List</h1>
              <SearchHolidayApproval />
                  {mappedHolidayApprovalList}
         </Container>
