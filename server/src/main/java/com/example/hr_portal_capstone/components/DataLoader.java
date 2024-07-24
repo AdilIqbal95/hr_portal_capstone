@@ -5,7 +5,6 @@ import com.example.hr_portal_capstone.models.Holiday;
 import com.example.hr_portal_capstone.models.Team;
 import com.example.hr_portal_capstone.models.enums.Grade;
 import com.example.hr_portal_capstone.models.enums.Reason;
-import com.example.hr_portal_capstone.models.enums.Status;
 import com.example.hr_portal_capstone.repositories.EmployeeRepository;
 import com.example.hr_portal_capstone.repositories.HolidayRepository;
 import com.example.hr_portal_capstone.repositories.TeamRepository;
@@ -17,11 +16,9 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Month;
-import java.util.ArrayList;
-import java.util.List;
+
 
 @Component
 public class DataLoader implements ApplicationRunner {

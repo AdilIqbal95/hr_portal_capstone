@@ -1,21 +1,23 @@
 import {Link, Outlet} from 'react-router-dom'
+import { Navbar, Nav } from 'react-bootstrap';
+
 
 function Navigation() {
 
     return (
       <>
-        <nav className="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-            <ul>
-                <li><Link to = "/user-dashboard">User Dashboard</Link></li>
-                <li><Link to = "/manager-dashboard">Manager Dashboard</Link></li>
-                <li><Link to = "/holidays">Holidays</Link></li>
-                <li><Link to = "/">Sign Out</Link></li>
+        <Navbar expand="sm" fixed="top" aria-label="Main navigation">
+          <ul className='navigation-bar'>
+                <Nav.Link as={Link} to = "/user-dashboard" aria-label="User Dashboard">User Dashboard</Nav.Link>
+                <Nav.Link as={Link} to = "/manager-dashboard" aria-label="Manager Dashboard">Manager Dashboard</Nav.Link>
+                <Nav.Link as={Link} to = "/holidays" aria-label="Holidays">Holidays</Nav.Link>
+                <Nav.Link as={Link}to = "/" aria-label="Sign Out">Sign Out</Nav.Link>
+         </ul>
 
-            </ul>
-        </nav>
+        </Navbar>
         <Outlet/>
       </>
     )
-  }
+  } 
   
   export default Navigation;

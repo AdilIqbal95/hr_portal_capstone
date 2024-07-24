@@ -12,6 +12,7 @@ function HRContainer() {
   const [allEmployees, setAllEmployees] = useState([])
   const [allHolidays, setAllHolidays] = useState([])
   const [allTeams, setAllTeams] = useState([])
+  const [openForm, setOpenForm] = useState(false);
 
 
   const fetchAllEmployees = async () => {
@@ -32,6 +33,58 @@ function HRContainer() {
     setAllTeams(data);
   }
 
+  const markPendingToApproved = async () => {
+    await fetch (`http://localhost:8080/holidays/${employee.id}?status=Approved`, {
+        method: "PATCH",
+        headers: {"Content-Type": "application/json"}
+    } );
+    await fetchAllHoliday();
+}
+
+// post method - add holiday form 
+useEffect(()=>{
+console.log("Current User Updated", currentUser)
+} ,[currentUser])
+
+
+const postRequestForHolidays = async (newHolidayRequest) => {
+  console.log(newHolidayRequest)
+  const response = await fetch ("http://localhost:8080/holidays", {
+    method:"POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(newHolidayRequest)
+  });
+  const newHoliday = await response.json();
+  console.log(newHoliday);
+  const tempUser = currentUser;
+  tempUser.holidays = [...currentUser.holidays, newHoliday];
+  setCurrentUser(tempUser);
+  // console.log(currentUser)
+  // setCurrentUser(newHoliday);
+}
+
+
+const fetchRandomFact = async () => {
+  try {
+      const response = await fetch("https://api.example.com/random-fact");
+      const data = await response.json();
+      setFact(data.fact);
+  } catch (error) {
+      console.error("Error fetching the random fact:", error);
+  }
+};
+
+
+
+  // const updateHolidayStatus = async () = {
+  //   const response = await fetch ("localhost:8080/holidays/${id}", {
+  //     method: "PATCH",
+  //     headers:{"Content-Type": "applidation/json"},
+  //     body: JSON.stringify(updateHolidayStatus)
+  //   })
+  // }
+
+
   // const url = ('localhost:8080/employees/login?' + new URLSearchParams({email:emailInput}).toString())
 
   const postLoginEmail = async (emailInput) => {
@@ -50,7 +103,9 @@ function HRContainer() {
     fetchAllEmployees()
     fetchAllHolidays()
     fetchAllTeams()
-  },[])
+    fetchRandomFact();
+  }, []);
+
 
   const managerRouter = createBrowserRouter(
     [
@@ -64,11 +119,11 @@ function HRContainer() {
           },
           {
             path: "/user-dashboard",
-            element: <UserPage allEmployees={allEmployees} currentUser={currentUser}/>
+            element: <UserPage allEmployees={allEmployees} currentUser={currentUser} postRequestForHolidays={postRequestForHolidays}/>
           },
           {
             path: "/manager-dashboard",
-            element: <ManagerPage/>
+            element: <ManagerPage allHolidays={allHolidays}/>
           },
           {
             path: "/holidays",
@@ -78,9 +133,8 @@ function HRContainer() {
         ]
       }
     ]
-
-
   )
+  
   const juniorRouter = createBrowserRouter(
     [
       {
@@ -107,10 +161,10 @@ function HRContainer() {
 
   )
     return (
-      <>
-       <RouterProvider router={managerRouter} />
+      <div>     
+          <RouterProvider router={managerRouter} />
 
-      </>
+      </div>
     )
   }
   
