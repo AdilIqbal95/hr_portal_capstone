@@ -1,7 +1,9 @@
 import {Link, Outlet} from 'react-router-dom'
 import { Navbar, Nav } from 'react-bootstrap';
+
 import { useState } from 'react';
 function Navigation({currentUser}) {
+
 
     return (
       <>
@@ -19,4 +21,5 @@ function Navigation({currentUser}) {
       </>
       )
   }
+
   export default Navigation;
