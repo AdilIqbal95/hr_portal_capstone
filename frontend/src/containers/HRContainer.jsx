@@ -166,7 +166,7 @@ const postRequestForHolidays = async (newHolidayRequest) => {
     }
 
     return (
-      {conditionalRender}
+      <h1>Placeholder</h1>
     )
   }
   
