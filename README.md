@@ -87,6 +87,7 @@ We aim to make paper records a thing of the past. Our system specifically identi
 ## Extensions For The Future
 * [ ] Add personal calendar in user - with days remaining counter and days til holiday counter
 * [ ] Add filter form in holiday list (calendar)
+* [ ] Form so employees could choose there profile image 
 
 
 ## API Routes
