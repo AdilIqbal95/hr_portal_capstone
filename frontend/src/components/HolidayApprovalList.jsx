@@ -1,14 +1,8 @@
-import { Navigate, useNavigate } from "react-router-dom";
 import SearchHolidayApproval from "./SearchHolidayApproval";
-<<<<<<< Updated upstream
-import HolidayList from "./HolidayList";
-import { useState, useEffect } from "react";
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 
 
 const HolidayApprovalList = ({allHolidays, patchHoliday, setAllHolidays, markPendingToApproved}) => {
-=======
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
->>>>>>> Stashed changes
 
     // const mockHolidayApprovalList = [
     //     {
@@ -61,30 +55,7 @@ import { Container, Row, Col, Card, Button } from 'react-bootstrap';
         const handleButtonClickForMark = () => {
             markPendingToApproved();
         }
-<<<<<<< Updated upstream
-
-    const mappedHolidayApprovalList = allHolidays.map((holiday) => {
-        return(
-            <>
-            <section className="content-grid">
     
-            <article className="card">
-                <p> {holiday.employeeId}</p>
-                <p> {holiday.startDate}</p>
-                <p> {holiday.endDate}</p>
-                <p> {holiday.reason}</p>
-                <p> {holiday.status}</p>
-            </article>
-            <article>
-                <button id="approval_button" onClick={handleButtonClickForMark}>Approve</button>
-            </article>
-            <article>
-                <button id="reject_button"onClick={handleButtonClickForMark}>Reject</button>
-            </article>
-            </section>
-            </>
-=======
-    ]
     const mappedHolidayApprovalList = mockHolidayApprovalList.map((holiday) => {
         return(
             <Col xs={12} md={6} key={holiday.employeeId}>
@@ -95,12 +66,11 @@ import { Container, Row, Col, Card, Button } from 'react-bootstrap';
                             <p> {holiday.endDate}</p>
                             <p> {holiday.reason}</p>
                             <p> {holiday.status}</p>
-                        <Button>Reject</Button>
-                        <Button >Approve</Button>
+                        <Button id="approval_button" onClick={handleButtonClickForMark}>Reject</Button>
+                        <Button id="reject_button" onClick={handleButtonClickForMark}>Approve</Button>
 
                 </Card>
             </Col>
->>>>>>> Stashed changes
         )
     })
 
