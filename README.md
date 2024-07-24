@@ -43,7 +43,11 @@ We aim to make paper records a thing of the past. Our system specifically identi
 * [x] Create ERD diagram
 * [x] Create UML diagram
 * [x] Create Wireframe
-* [x] Create Component diagram
+* [x] Business Template
+* [x] Risk Template
+* [x] Retrospection 
+
+
 
 
 
