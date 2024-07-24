@@ -6,14 +6,33 @@ public class EmployeeDTO {
 
     private String firstName;
     private String lastName;
+    private String email;
     private int teamId;
+    private String location;
     private Grade grade;
 
-    public EmployeeDTO(String firstName, String lastName, int teamId, Grade grade) {
+    public EmployeeDTO(String firstName, String lastName, String email, int teamId, Grade grade) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.email = email;
         this.teamId = teamId;
         this.grade = grade;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public EmployeeDTO() {

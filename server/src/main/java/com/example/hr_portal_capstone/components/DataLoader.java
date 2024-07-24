@@ -1,6 +1,7 @@
 package com.example.hr_portal_capstone.components;
 
 import com.example.hr_portal_capstone.models.Employee;
+import com.example.hr_portal_capstone.models.EmployeeDTO;
 import com.example.hr_portal_capstone.models.Holiday;
 import com.example.hr_portal_capstone.models.Team;
 import com.example.hr_portal_capstone.models.enums.Grade;
@@ -50,23 +51,24 @@ public class DataLoader implements ApplicationRunner {
         Team southLondon = new Team("South london","London");
         teamRepository.save(southLondon);
 
-        Employee maria = new Employee("Maria", "Sharif", "maria@hotmail.com", northLondon, "London", Grade.MANAGER,  25 );
-        employeeService.createEmployee(maria);
 
-        Employee dena = new Employee("Dena", "Shiranipour", "Dena@hotmail.com", southLondon, "London", Grade.MANAGER,  25 );
-        employeeService.createEmployee(dena);
+        Employee maria = new Employee("Maria", "Sharif", "maria@hotmail.com", northLondon, "London", Grade.MANAGER);
+        employeeRepository.save(maria);
 
-        Employee adil = new Employee("Adil", "Iqbal", "adil@hotmail.com", southLondon, "London", Grade.JUNIOR,  25 );
-        employeeService.createEmployee(adil);
+        Employee dena = new Employee("Dena", "Shiranipour", "Dena@hotmail.com", southLondon, "London", Grade.MANAGER);
+        employeeRepository.save(dena);
 
-        Employee ghish = new Employee("Ghish", "Mohanadas", "ghish@hotmail.com", southLondon, "London", Grade.JUNIOR,  25 );
-        employeeService.createEmployee(ghish);
+        Employee adil = new Employee("Adil", "Iqbal", "adil@hotmail.com", southLondon, "London", Grade.JUNIOR);
+        employeeRepository.save(adil);
 
-        Employee sabah = new Employee("Sabah", "Yusuf", "sabah@hotmail.com", northLondon, "London", Grade.JUNIOR,  25 );
-        employeeService.createEmployee(sabah);
+        Employee ghish = new Employee("Ghish", "Mohanadas", "ghish@hotmail.com", southLondon, "London", Grade.JUNIOR);
+        employeeRepository.save(ghish);
 
-        Employee peter = new Employee("Peter", "Parker", "Peter@hotmail.com", northLondon, "London", Grade.JUNIOR,  25 );
-        employeeService.createEmployee(peter);
+        Employee sabah = new Employee("Sabah", "Yusuf", "sabah@hotmail.com", northLondon, "London", Grade.JUNIOR);
+        employeeRepository.save(sabah);
+
+        Employee peter = new Employee("Peter", "Parker", "Peter@hotmail.com", northLondon, "London", Grade.JUNIOR);
+        employeeRepository.save(peter);
 
         LocalDateTime mariaStartDate = LocalDateTime.of(2024, Month.AUGUST,7, 23,59);
         LocalDateTime mariaEndDate = LocalDateTime.of(2024, Month.AUGUST, 14,23,59);

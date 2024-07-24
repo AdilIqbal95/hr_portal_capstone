@@ -1,6 +1,7 @@
 package com.example.hr_portal_capstone.controllers;
 
 import com.example.hr_portal_capstone.models.Employee;
+import com.example.hr_portal_capstone.models.EmployeeDTO;
 import com.example.hr_portal_capstone.models.enums.Grade;
 import com.example.hr_portal_capstone.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,7 @@ public class EmployeeController {
     }
 
     @PostMapping
-    public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee){
+    public ResponseEntity<Employee> createEmployee(@RequestBody EmployeeDTO employee){
         Employee savedEmployee = employeeService.createEmployee(employee);
         return new ResponseEntity<>(savedEmployee, HttpStatus.CREATED);
     }
