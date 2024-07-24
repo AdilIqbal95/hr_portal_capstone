@@ -1,4 +1,4 @@
-# Capstone project: HR system for Rainforest Retail
+# Capstone Project: HR system for Rainforest Retail
 
 ## By TimeTrackers ⏰   - “Because your time off should be a vacation, not a calculation!”
 
