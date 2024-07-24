@@ -37,27 +37,32 @@ We aim to make paper records a thing of the past. Our system specifically identi
 
 
 
-#### Trello Board
+## Planning
 
-https://trello.com/b/9Ep8GAai/capstone-project
+* [x] Create Trello board to track tasks to do, completed tasks, and log errors [Trello Board](https://trello.com/b/9Ep8GAai/capstone-project)
+* [x] Create ERD diagram
+* [x] Create UML diagram
+* [x] Create Wireframe
+* [x] Create Component diagram
+
 
 
 ## MVP 
 
-- Employees can add holidays in the form 
-- Employees can view the holiday list 
-- Employees can view the holidays of team members
-- Managers  approve employees' holiday
-- Managers can add an employee form
+* [x]  Employees can add holidays in the form 
+* [x] Employees can view the holiday list 
+* [x] Employees can view the holidays of team members
+* [x]  Managers  approve employees' holiday
+* [x]  Managers can add an employee form
 
 
 
 ## Extensions
 
-- Add personal calendar in user - with days remaining counter and days til holiday counter 
-- Add filter form in holiday list (calendar)
-- Add update and delete functions in the employee holiday list
-- Mobile integration - mobile friendly (react-bootstrap)
+* [ ]  Add personal calendar in user - with days remaining counter and days til holiday counter 
+* [ ] Add filter form in holiday list (calendar)
+* [ ] Add update and delete functions in the employee holiday list
+* [ ] Mobile integration - mobile friendly (react-bootstrap)
 
 
 ## API Routes
@@ -188,6 +193,11 @@ Lewis
 | 🍄 | Maria   | https://github.com/marias52   |
 | 💕 | Dena   | https://github.com/dena-shiranipour  |
 | 🎶 | Ghish   | https://github.com/Ghishani  |
+
+
+## Resources
+
+
 
 ## Licenses
 
