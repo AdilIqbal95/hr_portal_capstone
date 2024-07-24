@@ -69,16 +69,17 @@ We aim to make paper records a thing of the past. Our system specifically identi
 
 ## MVP 
 
-* [x]  Employees can add holidays in the form 
+* [x]  Employees can add holidays in the form
+* [x] Employees can login and see a rendered user page
+* [x] Managers can login and see a page on the navigation bar to oversee there junior members
 * [x] Employees can view the holiday list 
-* [x] Employees can view the holidays of team members
-* [x]  Managers  approve employees' holiday
-* [x]  Managers can add an employee form
+* [x] Employees can view the holidays of team members on calender page
 
 
 
 ## Extensions
-
+* [ ] Managers  approve or reject employees' holiday
+* [ ] Managers can add an employee form
 * [ ] Add update and delete functions in the employee holiday list
 * [ ] Mobile integration - mobile friendly (react-bootstrap)
 
