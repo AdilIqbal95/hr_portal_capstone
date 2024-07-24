@@ -42,9 +42,9 @@ We aim to make paper records a thing of the past. Our system specifically identi
 * [x] Create Trello board to track tasks to do, completed tasks, and log errors [Trello Board](https://trello.com/b/9Ep8GAai/capstone-project)
 * [x] Create [ERD diagram](documentation/ERDDiagrams.png)
 * [x] Create [UML diagram](documentation/UMLDiagram.png) 
-* [x] Create Wireframe
-* [x] Business Template 
-* [x] Risk Template
+* [x] Create Wireframe 
+* [x] [Business Template](documentation/) 
+* [x] [Risk Template](documentation/) 
 * [x] [Retrospective](documentation/TimeTrackersRetrospective.png) 
 
 
