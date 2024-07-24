@@ -1,8 +1,13 @@
 import React from 'react';
 import { Form, Button, Container, Row, Col, Dropdown, DropdownButton  } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 const EmployeeForm = ({openForm}, {setOpenForm}) => {
+
     const handleToggle = () => setOpenForm(!openForm);
+
+
     return(
         <>
         <Container className="employee-form">
@@ -13,34 +18,41 @@ const EmployeeForm = ({openForm}, {setOpenForm}) => {
             onClick={handleToggle} > */}
             {/* {openForm && ( */}
             <Form>
-            <Row>
+
+            <Row>           
+
                 <Col xs={12} md={6}>
                     <Form.Label>First Name</Form.Label>
                     <Form.Control type="text" placeholder="Enter First Name"  name="last-name" />
                 </Col>
+
                 <Col xs={12} md={6}>
                 <Form.Group>
                     <Form.Label>Last Name</Form.Label>
                     <Form.Control type="text" placeholder="Enter Last Name" name="last-name" />
                 </Form.Group>
                 </Col>
+
                 <Col xs={12} md={6}>
                 <Form.Group>
                     <Form.Label>Email</Form.Label>
                     <Form.Control type="email" placeholder="Enter Email" name="email" />
                 </Form.Group>
                 </Col>
+
                 <Col xs={12} md={6}>
                 <Form.Group>
                     <Form.Label>Location</Form.Label>
                     <Form.Control type="text" placeholder="Enter Location" name="location" />
                 </Form.Group>
                 </Col>
+
                 <Col xs={12} md={6}>
                 <Form.Group>
                     <Form.Label>Total Holiday</Form.Label>
                     <Form.Control type="number" placeholder="Enter Total Holiday" name="total-holiday" />
                 </Form.Group>
+
                 </Col>
                 <Col xs={12} md={6}>
                 <Form.Group>
@@ -52,6 +64,7 @@ const EmployeeForm = ({openForm}, {setOpenForm}) => {
                     </Form.Control>
                 </Form.Group>
                 </Col>
+
                 <Col xs={12} md={6}>
                 <Form.Group>
                     <Form.Label>Team Id</Form.Label>
@@ -75,4 +88,5 @@ const EmployeeForm = ({openForm}, {setOpenForm}) => {
             </>
   );
 }
+
 export default EmployeeForm;

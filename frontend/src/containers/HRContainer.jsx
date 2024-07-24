@@ -12,6 +12,7 @@ function HRContainer() {
   const [allEmployees, setAllEmployees] = useState([])
   const [allHolidays, setAllHolidays] = useState([])
   const [allTeams, setAllTeams] = useState([])
+  const [openForm, setOpenForm] = useState(false);
 
 
   const fetchAllEmployees = async () => {
@@ -60,6 +61,15 @@ const postRequestForHolidays = async (newHolidayRequest) => {
 }
 
 
+const fetchRandomFact = async () => {
+  try {
+      const response = await fetch("https://api.example.com/random-fact");
+      const data = await response.json();
+      setFact(data.fact);
+  } catch (error) {
+      console.error("Error fetching the random fact:", error);
+  }
+};
 
 
 
@@ -88,7 +98,9 @@ const postRequestForHolidays = async (newHolidayRequest) => {
     fetchAllEmployees()
     fetchAllHolidays()
     fetchAllTeams()
-  },[])
+    fetchRandomFact();
+  }, []);
+
 
   const managerRouter = createBrowserRouter(
     [
@@ -155,6 +167,8 @@ const postRequestForHolidays = async (newHolidayRequest) => {
     </>
 
   )
+
 }
+
   
   export default HRContainer;

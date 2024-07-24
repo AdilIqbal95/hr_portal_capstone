@@ -1,5 +1,8 @@
 import { useState } from "react";
 import {useNavigate} from "react-router-dom";
+import { Form, Button, Container } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
+
 
 
 
@@ -32,26 +35,19 @@ function LoginPage({setCurrentUser, postLoginEmail}) {
 
 
 
-    return (
-      <section>
-
-        <h1>Login to Rainforest HR! </h1>
-
-        <article>
-        <form onSubmit={handleSubmit}>
-        <label> Email </label>
-        <input type="text"  
-            id="email"
-            placeholder="Enter Email"
-            name="email"
-            onChange={handleTextValueChange}/>
-        <input type="submit"/>
-        </form>
-        </article>
-
-
-      </section>
-    )
-  }
+      return (
+        <div className="login-background ">
+        <Container >
+          <Card.Title className="">
+              <h1>Welcome To Rainforest!</h1>
+                 <Form onSubmit={handleSubmit} className="mt-3">
+                  <Form.Control type="email" placeholder="Enter Email" name="email" required  />
+                <Button className="mt-3" type="submit">Submit</Button>
+              </Form>
+              </Card.Title>
+        </Container>
+        </div>
+      );
+    };
   
   export default LoginPage;
