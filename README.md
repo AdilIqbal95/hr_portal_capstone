@@ -4,9 +4,9 @@
 
 ## Table of Contents
 
-1. [Summary](##Summary)
-2. [Diagrams](##Diagrams)
-3. [Planning](##Planning)
+1. [Summary](#Summary)
+2. [Diagrams](#Diagrams)
+3. [Planning](#Planning)
 4. [MVP](#MVP)
 5. [Extensions](#Extensions)
 6. [API Routes](#API_Routes)
