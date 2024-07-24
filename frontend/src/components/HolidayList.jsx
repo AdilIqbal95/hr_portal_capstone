@@ -1,3 +1,7 @@
+import { Card, Button, Container, Row, Col } from 'react-bootstrap';
+import { FaCalendarAlt, FaTrashAlt, FaEdit } from 'react-icons/fa';
+
+
 const HolidayList = ({currentUser}) => {
 
   const mockHolidayList = [
@@ -50,29 +54,34 @@ const handleStatus = (status) => {
 
 
 const mappedHolidayList = currentUser.holidays.map((holiday) => {
-  return (
-    <>
-    <section>
-      <article>
-        <p> <strong> Start Date: </strong> {new Date(holiday.startDate).toLocaleDateString()}</p>
-        <p> <strong> End Date: </strong> {new Date(holiday.endDate).toLocaleDateString()}</p>
-        <p> <strong> Holiday Reason: </strong>{handleReason(holiday.reason)}</p>
-        <p> <strong> Status: </strong>{handleStatus(holiday.status)}</p>
-      </article>
-      <article>
-        <button>Update</button>
-      </article>
-      <article>
-        <button>Delete</button>
-      </article>
-    </section>
-    </>
-  )
+    return (
+      <Col xs={12} md={6} lg={4} key={holiday.employeeId} className="holiday-card">
+        <Card className="mb-4">
+          <Card.Body>
+            <Card.Title className="text-success">
+              <FaCalendarAlt /> {new Date(holiday.startDate).toLocaleDateString()} - {new Date(holiday.endDate).toLocaleDateString()}
+            </Card.Title>
+            <Card.Text>
+              <strong>Reason:</strong> {handleReason(holiday.reason)}<br />
+              <strong>Status:</strong> {handleStatus(holiday.status)}
+            </Card.Text>
+            <div className="d">
+              <Button variant="outline-primary" className="me-2">
+                <FaEdit /> Update
+              </Button>
+              <Button variant="outline-danger">
+                <FaTrashAlt /> Delete
+              </Button>
+            </div>
+          </Card.Body>
+        </Card>
+      </Col>
+    )
 })
 
 return(
   <>
-  <h1>My Holiday List!</h1>
+  <h2>My Holiday List!</h2>
    <section>
    {mappedHolidayList}
    </section> 
