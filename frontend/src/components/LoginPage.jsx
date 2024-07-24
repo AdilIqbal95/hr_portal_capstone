@@ -41,7 +41,7 @@ function LoginPage({setCurrentUser, postLoginEmail}) {
           <Card.Title className="">
               <h1>Welcome To Rainforest!</h1>
                  <Form onSubmit={handleSubmit} className="mt-3">
-                  <Form.Control type="email" placeholder="Enter Email" name="email" required  />
+                  <Form.Control type="email" placeholder="Enter Email" name="email" onChange={handleTextValueChange} />
                 <Button className="mt-3" type="submit">Submit</Button>
               </Form>
               </Card.Title>

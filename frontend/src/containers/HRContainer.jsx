@@ -61,15 +61,15 @@ const postRequestForHolidays = async (newHolidayRequest) => {
 }
 
 
-const fetchRandomFact = async () => {
-  try {
-      const response = await fetch("https://api.example.com/random-fact");
-      const data = await response.json();
-      setFact(data.fact);
-  } catch (error) {
-      console.error("Error fetching the random fact:", error);
-  }
-};
+// const fetchRandomFact = async () => {
+//   try {
+//       const response = await fetch("https://api.example.com/random-fact");
+//       const data = await response.json();
+//       setFact(data.fact);
+//   } catch (error) {
+//       console.error("Error fetching the random fact:", error);
+//   }
+// };
 
 
 
@@ -98,7 +98,7 @@ const fetchRandomFact = async () => {
     fetchAllEmployees()
     fetchAllHolidays()
     fetchAllTeams()
-    fetchRandomFact();
+    // fetchRandomFact();
   }, []);
 
 
