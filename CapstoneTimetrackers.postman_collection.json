@@ -1,0 +1,364 @@
+{
+	"info": {
+		"_postman_id": "bf536b35-4080-4b8e-8720-0666be88506c",
+		"name": "Capstone",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34601382"
+	},
+	"item": [
+		{
+			"name": "Holidays",
+			"item": [
+				{
+					"name": "CREATE (New Holiday)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"employeeId\": 1,\n    \"startDate\": \"2018-02-05T12:59\",\n    \"endDate\": \"2018-02-08T12:59\",\n    \"reason\": \"PARENTAL_LEAVE\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/holidays",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"holidays"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET (Holidays By ID)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/holidays/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"holidays",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET (Holidays all )",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/holidays",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"holidays"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE (Holiday By ID)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/holidays/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"holidays",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE (Holiday)",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"reason\": \"OTHER\"\n }\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/holidays/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"holidays",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Teams",
+			"item": [
+				{
+					"name": "INDEX (All Teams)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/teams",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"teams"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET (Teams By ID)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/teams/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"teams",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET (All Holidays)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/holidays",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"holidays"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employees",
+			"item": [
+				{
+					"name": "INDEX (All Employees)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/employees",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET (Employee By ID)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/employees/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"employees",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET (Employee By Grade)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/employees/filter-by-grade?grade=MANAGER",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"employees",
+								"filter-by-grade"
+							],
+							"query": [
+								{
+									"key": "grade",
+									"value": "MANAGER"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE (New Employee)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Zsolt\",\n    \"lastName\": \"A\",\n    \"email\": \"Zsolt@example.com\",\n    \"teamId\": 1,\n    \"location\": \"london\",\n    \"grade\": \"MANAGER\",\n    \"totalHoliday\": 25\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/employees",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE (Employee By ID)",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"firstName\": \"Maria\",\n        \"lastName\": \"Ali\",\n        \"email\": \"maria@hotmail.com\",\n        \"location\": \"London\",\n        \"grade\": \"MANAGER\"\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/employees/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"employees",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE (Employee By ID)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/employees/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"employees",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LOGIN EMPLOYEES",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/employees/login?email=maria@hotmail.com",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"employees",
+								"login"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "maria@hotmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
