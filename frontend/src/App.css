@@ -78,6 +78,7 @@
   width: 100%;
   transform-style: preserve-3d;
   transition: transform 1s ease;
+  flex-direction: row;
 }
 
 .card p {
@@ -182,3 +183,10 @@
     justify-content: center;
   }
 }
+
+.user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
