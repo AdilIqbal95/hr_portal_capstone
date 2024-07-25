@@ -15,7 +15,7 @@ const EmployeeForm = ({ openForm, setOpenForm, postEmployee }) => {
     email: "",
     location: "",
     grade: "",
-    team: 0
+    teamId: 0
   });
 
   const handleInputChange = (e) => {
@@ -43,7 +43,7 @@ const EmployeeForm = ({ openForm, setOpenForm, postEmployee }) => {
       email: "",
       location: "",
       grade: "",
-      team: 0
+      teamId: 0
     });
     console.log(newEmployee);
     navigate('/manager-dashboard');
@@ -52,7 +52,6 @@ const EmployeeForm = ({ openForm, setOpenForm, postEmployee }) => {
   return (
     <>
       <Container className="employee-form-container">
-        {/* <h3>Add Employee</h3> */}
         <div className="dropdown-container">
           <Button
             className="dropdown-button"
@@ -127,7 +126,7 @@ const EmployeeForm = ({ openForm, setOpenForm, postEmployee }) => {
                   <Form.Label>Team Id</Form.Label>
                   <Form.Control
                     as="select"
-                    name="team"
+                    name="teamId"
                     onChange={handleNumInput}
                   >
                     <option value="">Select</option>
