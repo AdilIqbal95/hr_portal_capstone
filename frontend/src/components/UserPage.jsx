@@ -12,7 +12,7 @@ function UserPage({currentUser, postRequestForHolidays, openForm, setOpenForm, h
     } 
 
     const totalHolidays = 25;
-    const usedHolidays = 5;
+    const usedHolidays = 6;
 
 
     return (
