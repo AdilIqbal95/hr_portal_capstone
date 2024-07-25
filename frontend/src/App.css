@@ -11,6 +11,7 @@
   color: #888;
 }
 
+
 .navigation-bar a:hover {
   background-color: rgba(21, 21, 21, 0.321);
   color: white !important;
@@ -72,6 +73,7 @@
   padding: 0.5rem 1rem;
   font-weight: bold;
 }
+
 
 .card {
   position: relative;
@@ -216,3 +218,4 @@
 #user-card{
   width: 200%;
 }
+

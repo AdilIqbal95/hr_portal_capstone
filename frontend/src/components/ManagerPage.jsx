@@ -5,6 +5,7 @@ import HolidayApprovalList from "./HolidayApprovalList";
 import { FaPlus } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 function ManagerPage({ allHolidays, openForm, setOpenForm, postEmployee, employeeName, handleReason, handleStatus}) {
   return (
     <Container expand="sm" className="manager-dashboard py-5">

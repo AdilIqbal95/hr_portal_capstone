@@ -130,6 +130,10 @@ const postRequestForHolidays = async (newHolidayRequest) => {
             element: <UserPage allEmployees={allEmployees} currentUser={currentUser} postRequestForHolidays={postRequestForHolidays} openForm={openForm} setOpenForm={setOpenForm} handleReason={handleReason} handleStatus={handleStatus}/>
           },
           {
+            path: "/manager-dashboard",
+            element: <ManagerPage allHolidays={allHolidays} openForm={openForm} setOpenForm={setOpenForm} employeeName={currentUser ? currentUser.firstName : "Manager"}/>
+          },
+          {
             path: "/holidays",
             element: <HolidaysPage allHolidays={allHolidays}/>
           },
@@ -145,6 +149,7 @@ const postRequestForHolidays = async (newHolidayRequest) => {
     </>
 
   )
+
 }
 
   

@@ -27,6 +27,7 @@ const HolidayApprovalList = ({allHolidays, handleReason, handleStatus}) => {
         )
     })
 
+
     return(
         <Container className="mt-5">
              <SearchHolidayApproval />

@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
 import { FaUserPlus } from 'react-icons/fa';
 
+
 const EmployeeForm = ({ openForm, setOpenForm, postEmployee }) => {
   const navigate = useNavigate();
 
