@@ -16,14 +16,16 @@ function UserPage({currentUser, postRequestForHolidays, allEmployees}) {
 
     return (
       <Container fluid className="user-page mb-3">
-          <Row className="mt-5">
-              <Col xs={12} md={8} className="profile-column" >
+          <Row className="justify-content-center mt-4 mb-4">
+              <Col xs={12} md={6} className="profile-column" >
                   <UserProfile currentUser={currentUser} />
               </Col>
-              <Col xs={12} md={8} className="content-column mt-3">
+              <Col xs={24} md={6} className="content-column mt-3">
                   <HolidayRequestForm postRequestForHolidays={postRequestForHolidays} currentUser={currentUser} />
                </Col>
-                <Col xs={12} md={12} className="content-column mt-3">
+          </Row>
+          <Row>
+          <Col xs={12} md={12} className="content-column mt-3">
                   <HolidaysList currentUser={currentUser} />
               </Col>
           </Row>

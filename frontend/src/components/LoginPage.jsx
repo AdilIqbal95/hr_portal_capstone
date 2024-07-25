@@ -37,12 +37,11 @@ function LoginPage({setCurrentUser, postLoginEmail}) {
 
       return (
         <>
-    <video controls autoplay muted loop id="myVideo">
-    <script>
-    document.getElementById('vid').play();
-</script>
-      <source src="src/assets/ba4a5baff2fe4fa4bab966e1f5142502.mp4" type="video/mp4" />
-      
+     <video autoplay=" true"  muted loop id="myVideo">
+      <script>
+        document.getElementById('vid').play();
+      </script>
+      <source src="src/assets/ba4a5baff2fe4fa4bab966e1f5142502.mp4" type="video/mp4" /> 
     </video>
         <div className="login-background ">
         <Container >

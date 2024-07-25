@@ -191,7 +191,7 @@
 }
 
 .user-profile {
-  width: 50%;
+  width: 100%;
   border: 2px;
   border-radius: 15px;
   background: linear-gradient(to bottom right, #4ec87d81, #a6fb8f55);
@@ -212,8 +212,7 @@
 
 .add-holiday-button {
   display: block;
-  width: 100px;
-  height: 100px;
+  width: 100%;
   background: rgba(40, 167, 69, 0.2);
   border: 2px solid #28a745;
 }
@@ -233,7 +232,7 @@
 }
 
 /* Add some content at the bottom of the video/page */
-.content {
+.login-background {
   position: fixed;
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
@@ -242,8 +241,10 @@
   padding: 20px;
 }
 
-/* #myVideo {
-  pointer-events: none;
-} */
-
-
+.holiday-request-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}

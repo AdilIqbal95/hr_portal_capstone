@@ -1,22 +1,27 @@
-import { set } from "date-fns";
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { Form, Button, Card, Modal } from 'react-bootstrap';
-import { FaPlus } from 'react-icons/fa';
+import { Form, Button, Modal } from 'react-bootstrap';
 
 
 
-function HolidayRequestForm({ postRequestForHolidays, newHolidayRequest, currentUser }) {
+function HolidayRequestForm({ postRequestForHolidays, newHolidayRequest , currentUser }) {
     const [employeeId, setEmployeeId] = useState(currentUser.id);
     const [startDate, setStartDate] = useState(null);
     const [endDate, setEndDate] = useState(null);
     const [reason, setReason] = useState('');
-    const [showModal, setShowModal] = useState(false);
+     const [showModal , setShowModal] = useState(false);
 
+
+
+    const handleClose = () => setShowModal(false);
+    const handleShow = () => {
+        console.log("button clicked");
+        setShowModal(true);
+    }
 
     const handleSubmit = (event) => {
-      console.log("is the form submitting")
+        console.log("is the form submitting")
         event.preventDefault();
         const newHolidayRequest = {
             employeeId,
@@ -32,22 +37,22 @@ function HolidayRequestForm({ postRequestForHolidays, newHolidayRequest, current
   
 return (
     <>
-        <Button variant="success" className="add-holiday-button" onClick={() => setShowModal(true)}>
+        <Button xs ={12} md= {6} variant="success" className="add-holiday-button" onClick={handleShow}>
             <h1>+</h1>
             <p>Add Holiday</p>
         </Button>
 
-        <Modal show={showModal} onHide={() => setShowModal(false)}>
+        <Modal show={showModal} onHide={handleClose}>
             <Modal.Header closeButton>
                 <Modal.Title>Add Holiday Form</Modal.Title>
             </Modal.Header>
-            <Modal.Body>
+            <Modal.Body> 
                 <Form onSubmit={handleSubmit}>
                     <Form.Group controlId="startDate">
                         <Form.Label>Start Date</Form.Label>
                         <DatePicker
-                            selected={startDate}
-                            onChange={(date) => setStartDate(date)}
+                          selected={startDate}
+                         onChange={(date) => setStartDate(date)}
                             dateFormat="dd/MM/yyyy"
                             placeholderText="Select The Start Date"
                             className="form-control"
@@ -69,19 +74,20 @@ return (
                             as="select"
                             value={reason}
                             onChange={(e) => setReason(e.target.value)}
+                            
                         >
-                            <option value="">Select</option>
-                            <option value="ANNUAL_LEAVE">Annual Leave</option>
-                            <option value="PARENTAL_LEAVE">Parental Leave</option>
-                            <option value="SICK_LEAVE">Sick Leave</option>
-                            <option value="BEREAVEMENT_LEAVE">Bereavement Leave</option>
-                            <option value="OTHER">Other</option>
+                      <option value="">Select</option>
+                    <option value="ANNUAL_LEAVE">Annual Leave 🌴</option>
+                    <option value="PARENTAL_LEAVE">Parental Leave  👶</option>
+                    <option value="SICK_LEAVE"> Sick Leave  🤒</option>
+                    <option value="BEREAVEMENT_LEAVE">Bereavement Leave  💐</option>
+                    <option value="OTHER">Other  🤔</option>
                         </Form.Control>
                     </Form.Group>
                     <Button variant="primary" type="submit" className="mt-3">Submit</Button>
                 </Form>
-            </Modal.Body>
-        </Modal>
+             </Modal.Body>
+        </Modal> 
     </>
 );
 }
