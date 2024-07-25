@@ -6,27 +6,22 @@ import { FaCalendarAlt, FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
 
 const HolidayApprovalList = ({allHolidays, patchHoliday, setAllHolidays, markPendingToApproved}) => {
 
-   
-    
-    const navigate = useNavigate (); 
-    
+    // const navigate = useNavigate (); 
 
-  
+    // const handleApproval = () => {
+    //     patchHoliday(holidayData)
+    //     // patchHoliday(holidayId, {status:"APPROVED"});
+    //     Navigate(`/holidays`)
 
-    const handleApproval = () => {
-        patchHoliday(holidayData)
-        // patchHoliday(holidayId, {status:"APPROVED"});
-        Navigate(`/holidays`)
-
-        }
+    //     }
       
     
-    const handleRejection = () => {
-    // patchHoliday(holidayId, {status:"REJECTED"});
-    deleteHolidayFromManagerPage()
-    Navigate(`/holidays`)
+    // const handleRejection = () => {
+    // // patchHoliday(holidayId, {status:"REJECTED"});
+    // deleteHolidayFromManagerPage()
+    // Navigate(`/holidays`)
 
-    };
+    // };
 
         
     const handleButtonClickForMark = () => {
