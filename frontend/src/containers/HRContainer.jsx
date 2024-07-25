@@ -60,27 +60,18 @@ const postRequestForHolidays = async (newHolidayRequest) => {
   });
 }
 
+  const postEmployee = async (newEmployee) => {
+    console.log(newEmployee)
+    const response = await fetch ("http://localhost:8080/employees", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(newEmployee)
+    });
 
-// const fetchRandomFact = async () => {
-//   try {
-//       const response = await fetch("https://api.example.com/random-fact");
-//       const data = await response.json();
-//       setFact(data.fact);
-//   } catch (error) {
-//       console.error("Error fetching the random fact:", error);
-//   }
-// };
-
-
-
-  // const updateHolidayStatus = async () = {
-  //   const response = await fetch ("localhost:8080/holidays/${id}", {
-  //     method: "PATCH",
-  //     headers:{"Content-Type": "applidation/json"},
-  //     body: JSON.stringify(updateHolidayStatus)
-  //   })
-  // }
-
+    const savedEmployee = await response.json();
+    console.log(savedEmployee);
+    setAllEmployees([...allEmployees, savedEmployee])
+  }
 
   const postLoginEmail = async (emailInput) => {
     const response = await fetch (`http://localhost:8080/employees/login`, {
@@ -118,7 +109,7 @@ const postRequestForHolidays = async (newHolidayRequest) => {
           ...( currentUser?.grade == 'MANAGER' ? [ 
             {
               path: "/manager-dashboard",
-              element: <ManagerPage allHolidays={allHolidays} openForm={openForm} setOpenForm={setOpenForm} employeeName={currentUser ? currentUser.firstName : "Manager"}/>
+              element: <ManagerPage allHolidays={allHolidays} openForm={openForm} setOpenForm={setOpenForm} employeeName={currentUser ? currentUser.firstName : "Manager"} postEmployee={postEmployee} />
             }
           ] : []  
           ),

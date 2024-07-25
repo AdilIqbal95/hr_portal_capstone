@@ -5,7 +5,7 @@ import HolidayApprovalList from "./HolidayApprovalList";
 import { FaPlus } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function ManagerPage({ allHolidays, openForm, setOpenForm, postEmployee, employeeName  }) {
+function ManagerPage({ allHolidays, openForm, setOpenForm, postEmployee, employeeName}) {
   return (
     <Container expand="sm" className="manager-dashboard py-5">
       <Card className="shadow-sm mb-4">

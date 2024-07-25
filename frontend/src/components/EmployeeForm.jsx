@@ -14,15 +14,22 @@ const EmployeeForm = ({ openForm, setOpenForm, postEmployee }) => {
     lastName: "",
     email: "",
     location: "",
-    totalHoliday: "",
     grade: "",
-    team: ""
+    team: 0
   });
 
   const handleInputChange = (e) => {
     const propertyName = e.target.name;
-    const value = e.target.value;
     const copiedEmployee = { ...newEmployee };
+    copiedEmployee[propertyName] = e.target.value;
+
+    setNewEmployee(copiedEmployee);
+  };
+
+  const handleNumInput = (e) => {
+    const propertyName = e.target.name;
+    const copiedEmployee = { ...newEmployee };
+    copiedEmployee[propertyName] = parseInt(e.target.value);
 
     setNewEmployee(copiedEmployee);
   };
@@ -35,10 +42,10 @@ const EmployeeForm = ({ openForm, setOpenForm, postEmployee }) => {
       lastName: "",
       email: "",
       location: "",
-      totalHoliday: "",
       grade: "",
-      team: ""
+      team: 0
     });
+    console.log(newEmployee);
     navigate('/manager-dashboard');
   };
 
@@ -64,7 +71,6 @@ const EmployeeForm = ({ openForm, setOpenForm, postEmployee }) => {
                     type="text"
                     placeholder="Enter First Name"
                     name="firstName"
-                    value={newEmployee.firstName}
                     onChange={handleInputChange}
                   />
                 </Form.Group>
@@ -76,7 +82,6 @@ const EmployeeForm = ({ openForm, setOpenForm, postEmployee }) => {
                     type="text"
                     placeholder="Enter Last Name"
                     name="lastName"
-                    value={newEmployee.lastName}
                     onChange={handleInputChange}
                   />
                 </Form.Group>
@@ -88,7 +93,6 @@ const EmployeeForm = ({ openForm, setOpenForm, postEmployee }) => {
                     type="email"
                     placeholder="Enter Email"
                     name="email"
-                    value={newEmployee.email}
                     onChange={handleInputChange}
                   />
                 </Form.Group>
@@ -100,21 +104,7 @@ const EmployeeForm = ({ openForm, setOpenForm, postEmployee }) => {
                     type="text"
                     placeholder="Enter Location"
                     name="location"
-                    value={newEmployee.location}
                     onChange={handleInputChange}
-                  />
-                </Form.Group>
-              </Col>
-              <Col xs={12} md={6}>
-                <Form.Group>
-                  <Form.Label>Total Holiday</Form.Label>
-                  <Form.Control
-                    type="number"
-                    placeholder="Enter Total Holiday"
-                    name="totalHoliday"
-                    value={newEmployee.totalHoliday}
-                    onChange={handleInputChange}
-                    min = {0}
                   />
                 </Form.Group>
               </Col>
@@ -124,12 +114,11 @@ const EmployeeForm = ({ openForm, setOpenForm, postEmployee }) => {
                   <Form.Control
                     as="select"
                     name="grade"
-                    value={newEmployee.grade}
                     onChange={handleInputChange}
                   >
                     <option value="">Select</option>
-                    <option value="Junior">Junior</option>
-                    <option value="Manager">Manager</option>
+                    <option value="JUNIOR">Junior</option>
+                    <option value="MANAGER">Manager</option>
                   </Form.Control>
                 </Form.Group>
               </Col>
@@ -139,8 +128,7 @@ const EmployeeForm = ({ openForm, setOpenForm, postEmployee }) => {
                   <Form.Control
                     as="select"
                     name="team"
-                    value={newEmployee.team}
-                    onChange={handleInputChange}
+                    onChange={handleNumInput}
                   >
                     <option value="">Select</option>
                     <option value="1">Team 1</option>
