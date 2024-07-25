@@ -7,21 +7,9 @@ const SearchHolidayApproval = () =>  {
     const [searchTerm, setSearchTerm] = useState("");
 
 
-    // const handleFilterChange = (event) => {
-    //     const term = event.target.value.toLowerCase();
-    //     setSearchTerm(term);
-    //     onFilterChange(term);
-    // };
-
-    // const filterWainwrights = async (filterTerm) => {
-    //     let filteredWainwrightsList = await wainwrightsData.filter(wainwright => wainwright.name.toLowerCase().includes(filterTerm));
-    //     // console.log(filteredWainwrightsList);
-    //     mapWainwrights(filteredWainwrightsList);
-    // }
 
     const handleSearch = (event) => {
         event.preventDefault();
-        // if(inputText === "") HolidayApprovalList();
         const searchResult = holiday.filter(holiday => 
         holiday.employeeId.toLowerCase().include(inputText.toLowerCase().trim()) )
         setHolidays(searchResult);

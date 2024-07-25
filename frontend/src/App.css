@@ -133,7 +133,6 @@
   transform: scale(1.1);
 }
 
-/* Style the video: 100% width and height to cover the entire window */
 #myVideo {
   position: fixed;
   right: 0;
@@ -142,7 +141,6 @@
   min-height: 100%;
 }
 
-/* Add some content at the bottom of the video/page */
 .login-background {
   position: relative;
   bottom: 50%;
@@ -208,11 +206,11 @@
   width: 100%;
 }
 
-/* .content-column {
+.content-column {
   display: flex;
   align-items: center;
   justify-content: center;
-} */
+}  
 
 #user-card{
   width: 200%;

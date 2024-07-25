@@ -17,7 +17,6 @@ function LoginPage({postLoginEmail}) {
       const handleSubmit = (e) => {
         e.preventDefault();
         postLoginEmail(email)
-        // update db email column in db to be unique (research for spring)
 
         navigate('/user-dashboard')
       }
