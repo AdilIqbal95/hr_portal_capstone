@@ -20,7 +20,7 @@ function UserPage({currentUser, postRequestForHolidays, allEmployees}) {
               <Col xs={12} md={6} className="profile-column" >
                   <UserProfile currentUser={currentUser} />
               </Col>
-              <Col xs={24} md={6} className="content-column mt-3">
+              <Col xs={12} md={6} className="content-column mt-3">
                   <HolidayRequestForm postRequestForHolidays={postRequestForHolidays} currentUser={currentUser} />
                </Col>
           </Row>

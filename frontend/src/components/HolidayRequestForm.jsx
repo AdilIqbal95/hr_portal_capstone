@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { Form, Button, Modal } from 'react-bootstrap';
+import { Form, Button, Modal, Container } from 'react-bootstrap';
 
 
 
@@ -36,7 +36,7 @@ function HolidayRequestForm({ postRequestForHolidays, newHolidayRequest , curren
 
   
 return (
-    <>
+    <Container>
         <Button xs ={12} md= {6} variant="success" className="add-holiday-button" onClick={handleShow}>
             <h1>+</h1>
             <p>Add Holiday</p>
@@ -88,7 +88,7 @@ return (
                 </Form>
              </Modal.Body>
         </Modal> 
-    </>
+    </Container>
 );
 }
 
