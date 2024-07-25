@@ -2,28 +2,7 @@ import { Card, Col, Row, Container, Button } from 'react-bootstrap';
 import { FaCalendarAlt, FaEdit, FaTrashAlt } from 'react-icons/fa';
 
 
-const HolidayList = ({currentUser}) => {
-
-const handleReason = (reason) => {
-  const reasonWithoutUnderscore = reason.split('_').join(' ')
-
-  const reasonWithoutUnderscoreLower = reasonWithoutUnderscore.toLowerCase().split(' ');
-
-  for (let i = 0; i < reasonWithoutUnderscoreLower.length; i++){
-    reasonWithoutUnderscoreLower[i] = reasonWithoutUnderscoreLower[i][0].toUpperCase() + reasonWithoutUnderscoreLower[i].substr(1);
-  }
-
-    const reasonWithoutUnderscoreStr = reasonWithoutUnderscoreLower.join(' ')
-    return reasonWithoutUnderscoreStr;
-}
-
-
-const handleStatus = (status) => {
-  const statusLower = status.toLowerCase();
-  const finalStatus = statusLower[0].toUpperCase() + statusLower.substr(1);
-
-  return finalStatus;
-}
+const HolidayList = ({currentUser, handleReason, handleStatus}) => {
 
 
 const mappedHolidayList = currentUser.holidays.map((holiday) => (

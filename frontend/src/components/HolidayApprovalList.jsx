@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { FaCalendarAlt, FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
 
 
-const HolidayApprovalList = ({allHolidays, patchHoliday, setAllHolidays, markPendingToApproved}) => {
+const HolidayApprovalList = ({allHolidays, patchHoliday, setAllHolidays, markPendingToApproved, handleReason, handleStatus}) => {
 
     // const navigate = useNavigate (); 
 
@@ -34,10 +34,10 @@ const HolidayApprovalList = ({allHolidays, patchHoliday, setAllHolidays, markPen
                 <Card >
                      <Card.Title><strong> {holiday.employee.firstName} {holiday.employee.lastName}</strong></Card.Title>
                         <Card.Text>
-                            <p><strong><FaCalendarAlt /> Start Date: </strong>{holiday.startDate}</p>
-                            <p><strong><FaCalendarAlt /> End Date: </strong>{holiday.endDate}</p>
-                            <p><strong>Reason: </strong>{holiday.reason}</p>
-                            <p><strong> Status: </strong> {holiday.status}</p>
+                            <p><strong><FaCalendarAlt /> Start Date: </strong>{new Date(holiday.startDate).toLocaleDateString()}</p>
+                            <p><strong><FaCalendarAlt /> End Date: </strong>{new Date(holiday.endDate).toLocaleDateString()}</p>
+                            <p><strong>Reason: </strong>{handleReason(holiday.reason)}</p>
+                            <p><strong> Status: </strong> {handleStatus(holiday.status)}</p>
                          </Card.Text>
                          <Button variant="danger" onClick={() => handleRejection(holiday.employeeId)}>
                             <FaTimesCircle className= "me-2" />Reject

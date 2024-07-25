@@ -5,7 +5,7 @@ import UserProfile from "./UserProfile";
 import { Container, Row, Col } from 'react-bootstrap';
 
 
-function UserPage({currentUser, postRequestForHolidays, allEmployees, openForm, setOpenForm}) {
+function UserPage({currentUser, postRequestForHolidays, allEmployees, openForm, setOpenForm, handleReason, handleStatus}) {
 
     if (currentUser === null) {
       return null;
@@ -30,7 +30,7 @@ function UserPage({currentUser, postRequestForHolidays, allEmployees, openForm, 
           </Row>
           <Row>
           <Col xs={12} md={12} className="content-column mt-3">
-                  <HolidaysList currentUser={currentUser} />
+                  <HolidaysList currentUser={currentUser} handleReason={handleReason} handleStatus={handleStatus}/>
               </Col>
           </Row>
       </Container>

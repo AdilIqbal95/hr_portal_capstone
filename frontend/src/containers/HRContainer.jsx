@@ -85,6 +85,27 @@ const postRequestForHolidays = async (newHolidayRequest) => {
     setCurrentUser(currentUser); 
   }
 
+  const handleReason = (reason) => {
+    const reasonWithoutUnderscore = reason.split('_').join(' ')
+  
+    const reasonWithoutUnderscoreLower = reasonWithoutUnderscore.toLowerCase().split(' ');
+  
+    for (let i = 0; i < reasonWithoutUnderscoreLower.length; i++){
+      reasonWithoutUnderscoreLower[i] = reasonWithoutUnderscoreLower[i][0].toUpperCase() + reasonWithoutUnderscoreLower[i].substr(1);
+    }
+  
+      const reasonWithoutUnderscoreStr = reasonWithoutUnderscoreLower.join(' ')
+      return reasonWithoutUnderscoreStr;
+  }
+  
+  
+  const handleStatus = (status) => {
+    const statusLower = status.toLowerCase();
+    const finalStatus = statusLower[0].toUpperCase() + statusLower.substr(1);
+  
+    return finalStatus;
+  }
+
   useEffect(() => {
     fetchAllEmployees()
     fetchAllHolidays()
@@ -108,13 +129,13 @@ const postRequestForHolidays = async (newHolidayRequest) => {
           ...( currentUser?.grade == 'MANAGER' ? [ 
             {
               path: "/manager-dashboard",
-              element: <ManagerPage allHolidays={allHolidays} openForm={openForm} setOpenForm={setOpenForm} employeeName={currentUser ? currentUser.firstName : "Manager"} postEmployee={postEmployee} />
+              element: <ManagerPage allHolidays={allHolidays} openForm={openForm} setOpenForm={setOpenForm} employeeName={currentUser ? currentUser.firstName : "Manager"} postEmployee={postEmployee} handleReason={handleReason} handleStatus={handleStatus} />
             }
           ] : []  
           ),
           {
             path: "/user-dashboard",
-            element: <UserPage allEmployees={allEmployees} currentUser={currentUser} postRequestForHolidays={postRequestForHolidays} openForm={openForm} setOpenForm={setOpenForm}/>
+            element: <UserPage allEmployees={allEmployees} currentUser={currentUser} postRequestForHolidays={postRequestForHolidays} openForm={openForm} setOpenForm={setOpenForm} handleReason={handleReason} handleStatus={handleStatus}/>
           },
           {
             path: "/holidays",
