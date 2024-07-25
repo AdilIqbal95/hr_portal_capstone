@@ -190,3 +190,18 @@
   align-items: center;
 }
 
+.profile-column,
+.content-column {
+  margin-bottom: 20px;
+}
+
+.profile-column .card,
+.content-column .card {
+  width: 100%;
+}
+
+.content-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -22,7 +22,7 @@ function HolidayDonutChart({ totalHolidays, usedHolidays }) {
 
 
   const options = {
-    cutout: '70%', // Make the doughnut thinner
+    cutout: '70%',
     responsive: true,
     plugins: {
         legend: {
