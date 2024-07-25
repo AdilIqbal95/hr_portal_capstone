@@ -31,6 +31,7 @@ function HolidayDonutChart({ totalHolidays, usedHolidays }) {
         
     },
 };
+
   return (
     <Container>
         <h3>Holidays remaining:</h3>

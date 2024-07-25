@@ -1,33 +1,10 @@
 import SearchHolidayApproval from "./SearchHolidayApproval";
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-import { useNavigate } from "react-router-dom";
 import { FaCalendarAlt, FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
 
 
-const HolidayApprovalList = ({allHolidays, patchHoliday, setAllHolidays, markPendingToApproved, handleReason, handleStatus}) => {
-
-    // const navigate = useNavigate (); 
-
-    // const handleApproval = () => {
-    //     patchHoliday(holidayData)
-    //     // patchHoliday(holidayId, {status:"APPROVED"});
-    //     Navigate(`/holidays`)
-
-    //     }
-      
-    
-    // const handleRejection = () => {
-    // // patchHoliday(holidayId, {status:"REJECTED"});
-    // deleteHolidayFromManagerPage()
-    // Navigate(`/holidays`)
-
-    // };
-
+const HolidayApprovalList = ({allHolidays, handleReason, handleStatus}) => {
         
-    const handleButtonClickForMark = () => {
-        markPendingToApproved();
-    }
-    
     const mappedHolidayApprovalList = allHolidays.map((holiday) => {
         return(
             <Col xs={12} md={12} lg={12} key={holiday.employeeId} >
@@ -49,7 +26,6 @@ const HolidayApprovalList = ({allHolidays, patchHoliday, setAllHolidays, markPen
             </Col>
         )
     })
-
 
     return(
         <Container className="mt-5">

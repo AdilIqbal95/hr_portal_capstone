@@ -14,4 +14,3 @@ function HolidaysPage({allHolidays}) {
   }
   
   export default HolidaysPage;
-

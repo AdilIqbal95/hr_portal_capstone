@@ -4,9 +4,7 @@ import { Form, Button, Container } from 'react-bootstrap';
 import { Card } from 'react-bootstrap';
 
 
-
-
-function LoginPage({setCurrentUser, postLoginEmail}) {
+function LoginPage({postLoginEmail}) {
 
     const [email, setEmail] = useState("");
     const navigate = useNavigate();
@@ -28,9 +26,6 @@ function LoginPage({setCurrentUser, postLoginEmail}) {
       return (
         <>
      <video autoplay=" true"  muted loop id="myVideo">
-      <script>
-        document.getElementById('vid').play();
-      </script>
       <source src="src/assets/ba4a5baff2fe4fa4bab966e1f5142502.mp4" type="video/mp4" /> 
     </video>
         <div className="login-background ">

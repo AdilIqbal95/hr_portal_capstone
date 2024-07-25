@@ -5,7 +5,7 @@ import UserProfile from "./UserProfile";
 import { Container, Row, Col } from 'react-bootstrap';
 
 
-function UserPage({currentUser, postRequestForHolidays, allEmployees, openForm, setOpenForm, handleReason, handleStatus}) {
+function UserPage({currentUser, postRequestForHolidays, openForm, setOpenForm, handleReason, handleStatus}) {
 
     if (currentUser === null) {
       return null;

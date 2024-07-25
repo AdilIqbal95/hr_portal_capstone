@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { Form, Button, Modal, Container } from 'react-bootstrap';
+import { Form, Button, Container } from 'react-bootstrap';
 import { FaUserPlus } from 'react-icons/fa';
 
 

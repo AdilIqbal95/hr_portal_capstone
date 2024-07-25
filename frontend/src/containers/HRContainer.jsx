@@ -33,14 +33,6 @@ function HRContainer() {
     setAllTeams(data);
   }
 
-//   const markPendingToApproved = async () => {
-//     await fetch (`http://localhost:8080/holidays/${employee.id}?status=Approved`, {
-//         method: "PATCH",
-//         headers: {"Content-Type": "application/json"}
-//     } );
-//     await fetchAllHolidays();
-// }
-
 useEffect(()=>{
 console.log("Current User Updated", currentUser)
 } ,[currentUser])

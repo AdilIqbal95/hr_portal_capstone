@@ -4,35 +4,11 @@ import moment from 'moment'
 import "react-big-calendar/lib/css/react-big-calendar.css";
 
 
-const HolidaysCalendar = ({allHolidays}) => {
+const HolidaysCalendar = () => {
   
   const localizer = momentLocalizer(moment)
   
-  // const mockData = [{
-  //   title: "Event 1",
-  //   start: new Date(2024,1,1),
-  //   end: new Date(2024,1,6),    
-  //   allDay: true
-  // }]
-  
-  // const [holidayEvents, setHolidayEvents] = useState([])
-  
-  // const [events, setEvents] = useState(
-  // {
-  //   title: "",
-  //   start: "",
-  //   end: "",    
-  //   allDay: true
-  // });
   const [events, setEvents] = useState([])
-
-  // const holidaysData = allHolidays.map(holiday => ({
-  //   title: `${holiday.employee.firstName}`,
-  //   start: holiday.startDate,
-  //   end: holiday.endDate,    
-  //   allDay: true
-  // }));
-  // setHolidayEvents(holidaysData)
 
   useEffect(() => {
     const fetchHolidays = async () => {
