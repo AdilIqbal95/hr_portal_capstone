@@ -104,14 +104,17 @@ const postRequestForHolidays = async (newHolidayRequest) => {
 
   const managerRouter = createBrowserRouter(
     [
+
+      {
+        path:"/",
+        element:<LoginPage postLoginEmail = {postLoginEmail}setCurrentUser={setCurrentUser}/>
+      }, 
+      
       {
         path: "/",
         element: <Navigation currentUser={currentUser}/>,
         children: [
-          {
-            path:"/",
-            element:<LoginPage postLoginEmail = {postLoginEmail}setCurrentUser={setCurrentUser}/>
-          }, 
+         
           ...( currentUser?.grade == 'MANAGER' ? [ 
             {
               path: "/manager-dashboard",
