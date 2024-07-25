@@ -118,17 +118,13 @@ const postRequestForHolidays = async (newHolidayRequest) => {
           ...( currentUser?.grade == 'MANAGER' ? [ 
             {
               path: "/manager-dashboard",
-              element: <ManagerPage allHolidays={allHolidays}/>
+              element: <ManagerPage allHolidays={allHolidays} openForm={openForm} setOpenForm={setOpenForm} employeeName={currentUser ? currentUser.firstName : "Manager"}/>
             }
           ] : []  
           ),
           {
             path: "/user-dashboard",
             element: <UserPage allEmployees={allEmployees} currentUser={currentUser} postRequestForHolidays={postRequestForHolidays}/>
-          },
-          {
-            path: "/manager-dashboard",
-            element: <ManagerPage allHolidays={allHolidays} openForm={openForm} setOpenForm={setOpenForm} employeeName={currentUser ? currentUser.firstName : "Manager"}/>
           },
           {
             path: "/holidays",
@@ -139,34 +135,6 @@ const postRequestForHolidays = async (newHolidayRequest) => {
       }
     ]
   )
-
-  // const firstRouter = createBrowserRouter(
-  //   [
-  //     {
-  //       path: "/",
-  //       element: <Navigation/>,
-  //       children: [
-  //         {
-  //           path:"/",
-  //           element:<LoginPage postLoginEmail = {postLoginEmail}setCurrentUser={setCurrentUser}/>
-  //         },
-  //         {
-  //           path: "/user-dashboard",
-  //           element: <UserPage allEmployees={allEmployees} currentUser={currentUser} postRequestForHolidays={postRequestForHolidays}/>
-  //         },
-  //         {
-  //           path: "/manager-dashboard",
-  //           element: <ManagerPage allHolidays={allHolidays}/>
-  //         },
-  //         {
-  //           path: "/holidays",
-  //           element: <HolidaysPage allHolidays={allHolidays}/>
-  //         },
-
-  //       ]
-  //     }
-  //   ]
-  // )
 
   return (
     <>

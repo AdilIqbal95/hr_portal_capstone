@@ -21,17 +21,17 @@ const HolidayApprovalList = ({allHolidays, patchHoliday, setAllHolidays, markPen
         }
       
     
-      const handleRejection = () => {
-        // patchHoliday(holidayId, {status:"REJECTED"});
-        deleteHolidayFromManagerPage()
-        Navigate(`/holidays`)
+    const handleRejection = () => {
+    // patchHoliday(holidayId, {status:"REJECTED"});
+    deleteHolidayFromManagerPage()
+    Navigate(`/holidays`)
 
-        };
+    };
 
         
-        const handleButtonClickForMark = () => {
-            markPendingToApproved();
-        }
+    const handleButtonClickForMark = () => {
+        markPendingToApproved();
+    }
     
     const mappedHolidayApprovalList = allHolidays.map((holiday) => {
         return(

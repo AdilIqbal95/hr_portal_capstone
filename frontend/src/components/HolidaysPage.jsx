@@ -8,7 +8,7 @@ function HolidaysPage({allHolidays}) {
     return (
       <>
        <h1>Holidays Page</h1>
-       <HolidaysCalendar events={allHolidays} />
+       <HolidaysCalendar allHolidays={allHolidays} />
       </>
     )
   }
