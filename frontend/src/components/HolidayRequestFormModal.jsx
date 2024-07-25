@@ -2,17 +2,23 @@ import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Form, Button, Modal, Container } from 'react-bootstrap';
-import { FaUserPlus } from 'react-icons/fa';
 
 
 
-function HolidayRequestForm({ postRequestForHolidays, newHolidayRequest , currentUser, openForm, setOpenForm}) {
+function HolidayRequestFormModal({ postRequestForHolidays, newHolidayRequest , currentUser }) {
     const [employeeId, setEmployeeId] = useState(currentUser.id);
     const [startDate, setStartDate] = useState(null);
     const [endDate, setEndDate] = useState(null);
     const [reason, setReason] = useState('');
+     const [showModal , setShowModal] = useState(false);
 
-    const handleToggle = () => setOpenForm(!openForm);
+
+
+    const handleClose = () => setShowModal(false);
+    const handleShow = () => {
+        console.log("button clicked");
+        setShowModal(true);
+    }
 
     const handleSubmit = (event) => {
         console.log("is the form submitting")
@@ -25,21 +31,22 @@ function HolidayRequestForm({ postRequestForHolidays, newHolidayRequest , curren
         };
 
         postRequestForHolidays(newHolidayRequest);
+        setShowModal(false); 
 };
 
   
 return (
     <Container>
-        <div className="dropdown-container">
-          <Button
-            className="dropdown-button"
-            onClick={handleToggle}
-          >
-            <FaUserPlus className="icon" /> Add Holiday
-          </Button>
-          </div>
-          {openForm && (
-                <div>
+        <Button xs ={12} md= {6} variant="success" className="add-holiday-button" onClick={handleShow}>
+            <h1>+</h1>
+            <p>Add Holiday</p>
+        </Button>
+
+        <Modal show={showModal} onHide={handleClose}>
+            <Modal.Header closeButton>
+                <Modal.Title>Add Holiday Form</Modal.Title>
+            </Modal.Header>
+            <Modal.Body> 
                 <Form onSubmit={handleSubmit}>
                     <Form.Group controlId="startDate">
                         <Form.Label>Start Date</Form.Label>
@@ -79,10 +86,10 @@ return (
                     </Form.Group>
                     <Button variant="primary" type="submit" className="mt-3">Submit</Button>
                 </Form>
-                </div>
-                )}
+             </Modal.Body>
+        </Modal> 
     </Container>
 );
 }
 
-export default HolidayRequestForm;
+export default HolidayRequestFormModal;

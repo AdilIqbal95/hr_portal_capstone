@@ -33,13 +33,13 @@ function HRContainer() {
     setAllTeams(data);
   }
 
-  const markPendingToApproved = async () => {
-    await fetch (`http://localhost:8080/holidays/${employee.id}?status=Approved`, {
-        method: "PATCH",
-        headers: {"Content-Type": "application/json"}
-    } );
-    await fetchAllHoliday();
-}
+//   const markPendingToApproved = async () => {
+//     await fetch (`http://localhost:8080/holidays/${employee.id}?status=Approved`, {
+//         method: "PATCH",
+//         headers: {"Content-Type": "application/json"}
+//     } );
+//     await fetchAllHolidays();
+// }
 
 useEffect(()=>{
 console.log("Current User Updated", currentUser)
@@ -89,7 +89,6 @@ const postRequestForHolidays = async (newHolidayRequest) => {
     fetchAllEmployees()
     fetchAllHolidays()
     fetchAllTeams()
-    // fetchRandomFact();
   }, []);
 
 
@@ -115,7 +114,7 @@ const postRequestForHolidays = async (newHolidayRequest) => {
           ),
           {
             path: "/user-dashboard",
-            element: <UserPage allEmployees={allEmployees} currentUser={currentUser} postRequestForHolidays={postRequestForHolidays}/>
+            element: <UserPage allEmployees={allEmployees} currentUser={currentUser} postRequestForHolidays={postRequestForHolidays} openForm={openForm} setOpenForm={setOpenForm}/>
           },
           {
             path: "/holidays",

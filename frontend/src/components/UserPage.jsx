@@ -5,14 +5,11 @@ import UserProfile from "./UserProfile";
 import { Container, Row, Col } from 'react-bootstrap';
 
 
-function UserPage({currentUser, postRequestForHolidays, allEmployees}) {
+function UserPage({currentUser, postRequestForHolidays, allEmployees, openForm, setOpenForm}) {
 
     if (currentUser === null) {
       return null;
     } 
-    // if (currentUser == {}) {
-    //   return <h1>Hi</h1>;
-    // } 
 
     const totalHolidays = 25;
     const usedHolidays = 5;
@@ -25,7 +22,7 @@ function UserPage({currentUser, postRequestForHolidays, allEmployees}) {
                   <UserProfile currentUser={currentUser} />
              </Col>
               <Col xs={12} md={4} className= "content-column mt-3">
-                  <HolidayRequestForm postRequestForHolidays={postRequestForHolidays} currentUser={currentUser} />
+                  <HolidayRequestForm postRequestForHolidays={postRequestForHolidays} currentUser={currentUser} openForm={openForm} setOpenForm={setOpenForm}/>
                </Col>
                <Col xs={12} md={4} className="content-column">
                 <HolidayDonutChart totalHolidays={totalHolidays } usedHolidays={usedHolidays} />
