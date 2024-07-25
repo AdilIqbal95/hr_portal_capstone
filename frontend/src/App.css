@@ -3,40 +3,7 @@
   padding: 4rem;
   text-align: center;
 }
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
-@keyframes fadeIn {
-  from { opacity: 0.5; }
-  to { opacity: 1; }
-}
-.fade-in {
-  animation: fadeIn 1s ease-in;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
 .card {
   padding: 2em;
 }
@@ -44,20 +11,6 @@
   color: #888;
 }
 
-.spinner {
-  border: 4px solid #f3f3f3;
-  border-top: 4px solid #3498db;
-
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  animation: spin 2s linear infinite;
-}
-
-.active-link {
-  background-color: rgba(21, 21, 21, 0.321);
-  color: white !important;
-}
 
 .navigation-bar a:hover {
   background-color: rgba(21, 21, 21, 0.321);
@@ -78,37 +31,10 @@
 
 }
 
-@keyframes fadeIn {
-  from { opacity: 0.5; }
-  to { opacity: 1; }
-}
-.fade-in {
-  animation: fadeIn 1s ease-in;
-}
-
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-.spinner {
-  border: 4px solid #f3f3f3;
-  border-top: 4px solid #3498db;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  animation: spin 2s linear infinite;
-}
-
 .active-link {
   background-color: rgba(21, 21, 21, 0.321);
   color: white !important;
 }
-
 
 .navigation-bar {
   list-style-type: none;
@@ -123,7 +49,6 @@
   z-index: 1000;
 
 }
-
 
 .navigation-bar a {
   text-decoration: none;
@@ -138,7 +63,7 @@
 }
 
 .navigation-bar {
-    background-color: #97c897fd; /* Light green color */
+    background-color: #97c897fd;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
     border: 1px solid #000;
     padding: 1rem;
@@ -152,10 +77,10 @@
 
 .card {
   position: relative;
-  width: 500px;
-  height: 100px;
+  width: 100%;
   transform-style: preserve-3d;
   transition: transform 1s ease;
+  flex-direction: row;
 }
 
 .card p {
@@ -167,18 +92,6 @@
   max-height: 100%;
 }
 
-.content-grid {
-  margin-top: 10px;
-  padding: 10px;
-}
-
-
-/* body {
-  background-image: url('/Users/mariasharif/Documents/bnta_work/week_12/hr_portal_capstone/frontend/src/assets/background.png');  background-size: cover;
-  font-family: Arial, sans-serif;
-} */
-
-
 .calendar-container{
   padding: 10px;
   background-color: white;
@@ -189,3 +102,120 @@
   width: 100%;
 
 }
+
+.user-profile {
+  right: 50%;
+  width: 100%;
+  border: 2px;
+  border-radius: 15px;
+  background: linear-gradient(to bottom right, #4ec87d81, #a6fb8f55);
+  box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+.user-profile .card-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.user-profile .card-text {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.add-holiday-button {
+  display: block;
+  width: 100%;
+  background: linear-gradient(to bottom right, #368b5681, #a6fb8f13);
+  border: 2px solid #28a745;
+  box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.2);
+
+}
+
+.add-holiday-button:hover {
+  background: rgba(40, 167, 69, 0.4);
+  transform: scale(1.1);
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.login-background {
+  position: relative;
+  bottom: 50%;
+  right: 50%;
+  top: 50%;
+  left: 27%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 50%;
+  padding: 20px;
+}
+
+
+.holiday-list-container {
+  max-height: 600px;
+  padding: 20px;
+  background: #ece9e0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.holiday-list {
+  width: 150%;
+}
+
+
+.holiday-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: #f8f9fa;
+  transition: transform 0.3s ease;
+
+}
+
+.holiday-card:hover .card-title svg {
+  transform: rotate(360deg);
+  transition: transform 0.3s ease;
+
+}
+
+
+@media (min-width: 768px) {
+  .holiday-list-container {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.profile-column
+ {
+  margin-bottom: 20px; 
+  padding: 5em ;
+}
+
+.profile-column .card,
+.content-column .card {
+  width: 100%;
+}
+
+.content-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}  
+
+#user-card{
+  width: 200%;
+}
+

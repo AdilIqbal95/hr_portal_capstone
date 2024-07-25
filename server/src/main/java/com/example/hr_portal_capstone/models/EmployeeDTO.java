@@ -11,11 +11,12 @@ public class EmployeeDTO {
     private String location;
     private Grade grade;
 
-    public EmployeeDTO(String firstName, String lastName, String email, int teamId, Grade grade) {
+    public EmployeeDTO(String firstName, String lastName, String email, int teamId, String location, Grade grade) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.teamId = teamId;
+        this.location = location;
         this.grade = grade;
     }
 

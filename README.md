@@ -23,12 +23,16 @@
 - As more employees are added it becomes harder to get an overview of availability and where everyone is working on a given day
 - Keeping employee records up to date is time-consuming and error-prone
 
-RainforestRetail needs tailored solutions to improve the recording and maintenance of employee availability. The current use of paper records within the business requires too many resources and is unproductive. By combining all the physical diaries to be placed on a digital platform we could reduce the number of conflicts and improve overall employee productivity.
+
+Rainforest Retail needs tailored solutions to improve the recording and maintenance of employee availability. The current use of paper records within the business requires too many resources and is unproductive. By combining all the physical diaries to be placed on a digital platform we could reduce the number of conflicts and improve overall employee productivity.
+
 
 
 #### What makes us different?
 
-We aim to make paper records a thing of the past. Our system specifically identifies the gaps in the data of Rainforest retail and helps the process of organisation to make things easier for the head office down to the warehouse worker.
+
+We aim to make paper records a thing of the past. Our system specifically identifies the gaps in the data of Rainforest Retail and helps the process of organisation to make things easier for the head office down to the warehouse worker.
+
 
 
 ## Diagrams
