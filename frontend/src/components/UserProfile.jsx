@@ -7,7 +7,7 @@ function UserProfile({currentUser}) {
     <Container>
     <Row className="justify-content-center">
       <Col xs={6} md={6}> 
-        <Card className="user-profile p-3 mb-3">
+        <Card className="user-profile p-3 mb-3" id="user-card">
           <Image 
             src= "src/assets/PROFILE-PHOTO-PLACEHOLDER-300x300.webp" 
             roundedCircle 

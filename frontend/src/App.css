@@ -197,9 +197,10 @@
   align-items: center;
 }
 
-.profile-column,
-.content-column {
-  margin-bottom: 20px;
+.profile-column
+ {
+  margin-bottom: 20px; 
+  padding: 5em ;
 }
 
 .profile-column .card,
@@ -207,8 +208,12 @@
   width: 100%;
 }
 
-.content-column {
+/* .content-column {
   display: flex;
   align-items: center;
   justify-content: center;
+} */
+
+#user-card{
+  width: 200%;
 }
