@@ -52,7 +52,7 @@ const EmployeeForm = ({ openForm, setOpenForm, postEmployee }) => {
   return (
     <>
       <Container className="employee-form-container">
-        <h3>Add Employee</h3>
+        {/* <h3>Add Employee</h3> */}
         <div className="dropdown-container">
           <Button
             className="dropdown-button"
